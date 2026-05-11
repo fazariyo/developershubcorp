@@ -56,7 +56,7 @@ export function AboutPageBody() {
             </span>
           </h1>
           <p className="qs-about-lede">
-            We are QUAD Solutions — a premium digital collective. We partner
+            We are DevelopersHub Corporation — a premium digital collective. We partner
             with ambitious businesses worldwide to deliver specialized
             expertise in Growth, Creative, Digital, and AI, all managed under
             one unified roof.
@@ -123,7 +123,7 @@ export function AboutPageBody() {
                 nightmare.
               </p>
               <p>
-                That&apos;s why we built QUAD Solutions. We brought together
+                That&apos;s why we built DevelopersHub Corporation. We brought together
                 top-tier specialists across four core disciplines — Growth
                 Marketing, Creative Production, Digital Products, and AI &amp;
                 Automation. Our unique structure allows us to deploy the exact
@@ -137,7 +137,7 @@ export function AboutPageBody() {
             </div>
           </div>
           <div className="qs-about-story-image">
-            <img src="/assets/about/story.jpg" alt="The QUAD Solutions team at work" loading="lazy" />
+            <img src="/assets/about/story.jpg" alt="The DevelopersHub Corporation team at work" loading="lazy" />
           </div>
         </div>
       </section>

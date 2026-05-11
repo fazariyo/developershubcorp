@@ -24,6 +24,8 @@ export function TemplateNavbar() {
     pathname === "/case-studies" || pathname === "/case-study-details";
   const onAbout = pathname === "/about-us";
   const onSpecialists = pathname === "/specialists";
+  const onCareers = pathname === "/careers";
+  const onCourses = pathname === "/courses";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -66,18 +68,16 @@ export function TemplateNavbar() {
                 href="/"
                 className={`navbar-brand-2 w-nav-brand${onHome ? " w--current" : ""}`}
                 aria-current={onHome ? "page" : undefined}
-                style={{ display: "inline-flex", alignItems: "center", gap: 0 }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 10 }}
               >
                 <img
                   loading="lazy"
-                  src="/assets/logo/quad-icon.png"
-                  alt="QUAD Solutions"
+                  src="/assets/logo/developershub-icon-black.png"
+                  alt="DevelopersHub Corporation"
                   style={{
-                    height: "44px",
+                    height: "42px",
                     width: "auto",
                     display: "block",
-                    marginRight: "4px",
-                    mixBlendMode: "multiply",
                   }}
                 />
                 <span
@@ -86,22 +86,31 @@ export function TemplateNavbar() {
                     display: "inline-flex",
                     flexDirection: "column",
                     lineHeight: 1,
+                    gap: 3,
                   }}
                 >
-                  <span style={{ fontSize: 23, lineHeight: 1, fontWeight: 500 }}>
-                    QUAD
+                  <span
+                    style={{
+                      fontSize: 21,
+                      lineHeight: 1,
+                      fontWeight: 600,
+                      letterSpacing: "-0.01em",
+                      color: "var(--black-100)",
+                    }}
+                  >
+                    DevelopersHub
                   </span>
                   <span
                     className="italic-span typing-text"
                     style={{
-                      fontSize: 18.5,
+                      fontSize: 14,
                       lineHeight: 1,
-                      letterSpacing: 0,
+                      letterSpacing: "0.04em",
                       fontWeight: 400,
-                      color: "var(--black-100)",
+                      color: "var(--black-60, #6b6b6b)",
                     }}
                   >
-                    Solutions
+                    Corporation
                   </span>
                 </span>
               </Link>
@@ -142,6 +151,20 @@ export function TemplateNavbar() {
                   aria-current={onAbout ? "page" : undefined}
                 >
                   About us
+                </Link>
+                <Link
+                  href="/careers"
+                  className={`nav-link-4${onCareers ? " w--current" : ""}`}
+                  aria-current={onCareers ? "page" : undefined}
+                >
+                  Careers
+                </Link>
+                <Link
+                  href="/courses"
+                  className={`nav-link-4${onCourses ? " w--current" : ""}`}
+                  aria-current={onCourses ? "page" : undefined}
+                >
+                  Courses
                 </Link>
               </li>
             </ul>
@@ -254,6 +277,24 @@ export function TemplateNavbar() {
                   aria-current={onAbout ? "page" : undefined}
                 >
                   About us
+                </Link>
+              </li>
+              <li className="list-item-12">
+                <Link
+                  href="/careers"
+                  className={`link-6${onCareers ? " w--current" : ""}`}
+                  aria-current={onCareers ? "page" : undefined}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li className="list-item-12">
+                <Link
+                  href="/courses"
+                  className={`link-6${onCourses ? " w--current" : ""}`}
+                  aria-current={onCourses ? "page" : undefined}
+                >
+                  Courses
                 </Link>
               </li>
             </ul>

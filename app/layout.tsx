@@ -23,17 +23,12 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: {
-    default: "Quad Solutions — Your Entire Digital Department Under One Roof",
-    template: "%s | Quad Solutions",
+    default: "DevelopersHub Corporation — Your Entire Digital Department Under One Roof",
+    template: "%s | DevelopersHub Corporation",
   },
   description:
     "Tired of juggling multiple agencies? We bring together specialized teams in Growth, Creative, Digital, and Al—all working as one to scale your business and simplify your life.",
   robots: { index: false, follow: false },
-  icons: {
-    icon: "/assets/wf/67a5fb8bc33c7f25ab4e52d9/68e3732f7782e21e4dbbc032_favicon.svg",
-    apple:
-      "/assets/wf/67a5fb8bc33c7f25ab4e52d9/68e3742df2a2b68f26be1706_webclip.svg",
-  },
 };
 
 const webflowTouchClass = `!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);`;

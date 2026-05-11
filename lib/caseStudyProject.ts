@@ -220,7 +220,7 @@ export const CASE_STUDY_VARIANTS: Record<CaseStudyProjectId, CaseStudyVariant> =
     ],
     testimonial: {
       quote:
-        "QUAD transformed our single-product brand into a market leader by understanding our audience better than we did.",
+        "DevelopersHub transformed our single-product brand into a market leader by understanding our audience better than we did.",
       name: "Mustafa H.",
       role: "E-Commerce Growth Strategist, MexiVida",
     },
