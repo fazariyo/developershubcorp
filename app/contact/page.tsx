@@ -5,7 +5,7 @@ import "./contact-page.css";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Tell us about your goals and which parts of your digital department you want to consolidate. A Quad Solutions partner will reply within one business day.",
+    "Tell us about your goals and which parts of your digital department you want to consolidate. A DevelopersHub Corporation partner will reply within one business day.",
 };
 
 export default function ContactPage() {

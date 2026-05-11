@@ -243,7 +243,7 @@ function specialist(
 
 const BRAND_STRATEGY: ServiceDetailsContent = {
   slug: "brand-strategy",
-  documentTitle: "Brand Strategy | Quad Solutions",
+  documentTitle: "Brand Strategy | DevelopersHub Corporation",
   metaDescription:
     "Transform your brand with expert strategy — from positioning to visual identity, comprehensive creative services for lasting growth.",
   hero: {
@@ -409,7 +409,7 @@ const BRAND_STRATEGY: ServiceDetailsContent = {
     cards: [
       {
         quote:
-          "Quad Solutions helped us discover who we really are as a brand. Their strategic process uncovered insights that transformed how we position ourselves in the market.",
+          "DevelopersHub Corporation helped us discover who we really are as a brand. Their strategic process uncovered insights that transformed how we position ourselves in the market.",
         stat: { value: "3.5x", label: "Brand awareness increase in 6 months" },
         name: "Sarah Mitchell",
         role: "CEO, FlowBank",
@@ -456,7 +456,7 @@ const BRAND_STRATEGY: ServiceDetailsContent = {
         a: "We align on KPIs up front — awareness, conversion, retention, or internal clarity — and define how we will track them post-launch.",
       },
       {
-        q: "How do I get started with Quad Solutions?",
+        q: "How do I get started with DevelopersHub Corporation?",
         a: "Book a discovery call or use the form below. We will respond with next steps and a tailored scope within a few business days.",
       },
     ],
@@ -565,7 +565,7 @@ const AI_EXPLORE_CARDS: ServiceExploreCard[] = [
 
 const AI: ServiceDetailsContent = {
   slug: "ai-automation",
-  documentTitle: "AI & Automation | Quad Solutions",
+  documentTitle: "AI & Automation | DevelopersHub Corporation",
   metaDescription:
     "Intelligent automation, AI communication tools, and advanced AI systems — engineered to remove bottlenecks, accelerate execution, and turn fragmented operations into measurable flow.",
   hero: {
@@ -807,7 +807,7 @@ const AI: ServiceDetailsContent = {
 
 const INTELLIGENT_AUTOMATION: ServiceDetailsContent = {
   slug: "intelligent-automation",
-  documentTitle: "Intelligent Automation | Quad Solutions",
+  documentTitle: "Intelligent Automation | DevelopersHub Corporation",
   metaDescription:
     "End-to-end workflow, GTM, and business process automation that removes manual bottlenecks and connects sales, ops, and support into one intelligent flow.",
   hero: {
@@ -1046,7 +1046,7 @@ const INTELLIGENT_AUTOMATION: ServiceDetailsContent = {
 
 const AI_COMMUNICATION: ServiceDetailsContent = {
   slug: "ai-communication-tools",
-  documentTitle: "AI Communication Tools | Quad Solutions",
+  documentTitle: "AI Communication Tools | DevelopersHub Corporation",
   metaDescription:
     "AI-powered chat, support, and response systems that classify, draft, route, and resolve conversations faster — with human-quality context.",
   hero: {
@@ -1285,7 +1285,7 @@ const AI_COMMUNICATION: ServiceDetailsContent = {
 
 const ADVANCED_AI: ServiceDetailsContent = {
   slug: "advanced-ai-systems",
-  documentTitle: "Advanced AI Systems | Quad Solutions",
+  documentTitle: "Advanced AI Systems | DevelopersHub Corporation",
   metaDescription:
     "Autonomous AI agents, AI-driven insights, and custom AI integrations engineered for the workflows where your team spends the most time.",
   hero: {
@@ -1653,7 +1653,7 @@ const DIGITAL_EXPLORE_CARDS: ServiceExploreCard[] = [
 
 const PAID_ADVERTISING: ServiceDetailsContent = {
   slug: "paid-advertising",
-  documentTitle: "Paid Advertising | Quad Solutions",
+  documentTitle: "Paid Advertising | DevelopersHub Corporation",
   metaDescription:
     "Performance media across Meta, Google, TikTok, LinkedIn, and Pinterest — built to acquire customers profitably and scale spend with clear unit economics.",
   hero: {
@@ -1810,7 +1810,7 @@ const PAID_ADVERTISING: ServiceDetailsContent = {
 
 const ORGANIC_MARKETING: ServiceDetailsContent = {
   slug: "organic-marketing",
-  documentTitle: "Organic Marketing | Quad Solutions",
+  documentTitle: "Organic Marketing | DevelopersHub Corporation",
   metaDescription:
     "SEO, social, and content programs that compound — building durable demand, audience equity, and category leadership without renting every click.",
   hero: {
@@ -1938,7 +1938,7 @@ const ORGANIC_MARKETING: ServiceDetailsContent = {
 
 const STRATEGIC_OPTIMIZATION: ServiceDetailsContent = {
   slug: "strategic-optimization",
-  documentTitle: "Strategic Optimization | Quad Solutions",
+  documentTitle: "Strategic Optimization | DevelopersHub Corporation",
   metaDescription:
     "Audience targeting, funnel diagnostics, and campaign analysis that turn raw performance data into the next round of compounding growth decisions.",
   hero: {
@@ -2066,7 +2066,7 @@ const STRATEGIC_OPTIMIZATION: ServiceDetailsContent = {
 
 const VISUAL_CONTENT_CREATION: ServiceDetailsContent = {
   slug: "visual-content-creation",
-  documentTitle: "Visual Content Creation | Quad Solutions",
+  documentTitle: "Visual Content Creation | DevelopersHub Corporation",
   metaDescription:
     "Product photography, brand identity systems, and platform-ready social visuals built to make your brand recognisable in a 1.5-second scroll.",
   hero: {
@@ -2194,7 +2194,7 @@ const VISUAL_CONTENT_CREATION: ServiceDetailsContent = {
 
 const VIDEO_POST_PRODUCTION: ServiceDetailsContent = {
   slug: "video-post-production",
-  documentTitle: "Video & Post-Production | Quad Solutions",
+  documentTitle: "Video & Post-Production | DevelopersHub Corporation",
   metaDescription:
     "Commercials, ad creatives, and edited content engineered for paid performance and organic reach — colour, sound, and pacing handled end-to-end.",
   hero: {
@@ -2322,7 +2322,7 @@ const VIDEO_POST_PRODUCTION: ServiceDetailsContent = {
 
 const AI_GENERATED_CONTENT: ServiceDetailsContent = {
   slug: "ai-generated-content",
-  documentTitle: "AI-Generated Content | Quad Solutions",
+  documentTitle: "AI-Generated Content | DevelopersHub Corporation",
   metaDescription:
     "UGC-style, cinematic, and animated content produced with AI — built to scale creative volume across Meta, YouTube, TikTok, and podcast inventory.",
   hero: {
@@ -2450,7 +2450,7 @@ const AI_GENERATED_CONTENT: ServiceDetailsContent = {
 
 const WEB_DEVELOPMENT: ServiceDetailsContent = {
   slug: "web-development",
-  documentTitle: "Web Development | Quad Solutions",
+  documentTitle: "Web Development | DevelopersHub Corporation",
   metaDescription:
     "Custom websites, e-commerce platforms, and conversion-tuned landing pages — designed for speed, accessibility, and clean performance instrumentation.",
   hero: {
@@ -2578,7 +2578,7 @@ const WEB_DEVELOPMENT: ServiceDetailsContent = {
 
 const MOBILE_APP_DEVELOPMENT: ServiceDetailsContent = {
   slug: "mobile-app-development",
-  documentTitle: "Mobile App Development | Quad Solutions",
+  documentTitle: "Mobile App Development | DevelopersHub Corporation",
   metaDescription:
     "Native and cross-platform iOS and Android apps engineered for real production loads — clean architecture, store-ready, instrumented from day one.",
   hero: {
@@ -2706,7 +2706,7 @@ const MOBILE_APP_DEVELOPMENT: ServiceDetailsContent = {
 
 const CUSTOM_SOFTWARE_SOLUTIONS: ServiceDetailsContent = {
   slug: "custom-software-solutions",
-  documentTitle: "Custom Software Solutions | Quad Solutions",
+  documentTitle: "Custom Software Solutions | DevelopersHub Corporation",
   metaDescription:
     "Internal tools, business process software, and scalable digital products tailored to the specific operational shape of your business.",
   hero: {
@@ -2834,7 +2834,7 @@ const CUSTOM_SOFTWARE_SOLUTIONS: ServiceDetailsContent = {
 
 const MARKETING: ServiceDetailsContent = {
   slug: "growth-marketing",
-  documentTitle: "Growth Marketing | Quad Solutions",
+  documentTitle: "Growth Marketing | DevelopersHub Corporation",
   metaDescription:
     "Paid, organic, and lifecycle growth programs engineered to acquire customers profitably and turn marketing into a measurable revenue system.",
   hero: {
@@ -2961,7 +2961,7 @@ const MARKETING: ServiceDetailsContent = {
 
 const CREATIVE: ServiceDetailsContent = {
   slug: "creative-production",
-  documentTitle: "Creative Production | Quad Solutions",
+  documentTitle: "Creative Production | DevelopersHub Corporation",
   metaDescription:
     "Visual storytelling, video, and AI-accelerated content engineered to feed paid and organic channels with creative your audience actually stops to watch.",
   hero: {
@@ -3087,7 +3087,7 @@ const CREATIVE: ServiceDetailsContent = {
 
 const DIGITAL: ServiceDetailsContent = {
   slug: "digital-products",
-  documentTitle: "Digital Products | Quad Solutions",
+  documentTitle: "Digital Products | DevelopersHub Corporation",
   metaDescription:
     "Custom websites, e-commerce, mobile apps, and software shaped to the operational reality of your business — engineered for production, not just launch.",
   hero: {

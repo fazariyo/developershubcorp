@@ -3,7 +3,7 @@
 export function FAQSection() {
   const faqs = [
     {
-      question: "What services does QUAD Solutions offer?",
+      question: "What services does DevelopersHub Corporation offer?",
       answer:
         "We operate across four specialized divisions: Growth Marketing (Paid & Organic), Creative Production (Visuals & Video), Digital Products (Web & App Development), and AI & Automation (Chatbots & Workflows).",
       dataWId: "69f3e81b-e3ab-9564-a29d-1592c3d0da66",

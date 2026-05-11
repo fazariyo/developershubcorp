@@ -79,7 +79,7 @@ export function TeamSection({ heading = DEFAULT_HEADING }: TeamSectionProps = {}
                     />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/quadsolutions"
+                    href="https://www.linkedin.com/company/developershub-corporation/"
                     className="linkedin-link w-inline-block"
                   >
                     <img

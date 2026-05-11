@@ -30,8 +30,8 @@ export async function sendBrevoEmail(input: SendEmailInput): Promise<void> {
   const sender =
     input.sender ??
     {
-      email: process.env.BREVO_FROM_EMAIL ?? "no-reply@quadsolutions.ai",
-      name: process.env.BREVO_FROM_NAME ?? "QUAD Solutions Website",
+      email: process.env.BREVO_FROM_EMAIL ?? "no-reply@developershubcorp.com",
+      name: process.env.BREVO_FROM_NAME ?? "DevelopersHub Corporation Website",
     };
 
   const res = await fetch(BREVO_ENDPOINT, {

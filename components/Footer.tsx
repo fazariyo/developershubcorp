@@ -1,247 +1,215 @@
 import Link from "next/link";
 
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Specialists", href: "/specialists" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Careers", href: "/careers" },
+  { label: "Courses", href: "/courses" },
+];
+
+const COMPANY_LINKS: { label: string; href: string }[] = [
+  { label: "Contact Us", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms" },
+];
+
+const SOCIAL = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/developershubcorp?igsh=MWFsdmZxZnB0Y2Izbw==",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1GVAk5a16B/",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M13.5 22v-8.4h2.8l.42-3.25h-3.22V8.27c0-.94.26-1.58 1.6-1.58H17V3.78c-.31-.04-1.38-.13-2.62-.13-2.6 0-4.38 1.59-4.38 4.5v2.2H7v3.25h2.99V22h3.5Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/developershub-corporation/",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4v11H3v-11Zm6 0h3.8v1.55h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.4h-4v-4.79c0-1.14-.02-2.6-1.58-2.6-1.58 0-1.82 1.24-1.82 2.52v4.87H9v-11Z" />
+      </svg>
+    ),
+  },
+];
+
+const PinIcon = () => (
+  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M8 1.5c-2.7 0-5 2.2-5 4.9 0 3.5 5 8.1 5 8.1s5-4.6 5-8.1c0-2.7-2.3-4.9-5-4.9Z" />
+    <circle cx="8" cy="6.4" r="1.7" />
+  </svg>
+);
+
+const MailIcon = () => (
+  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <rect x="2" y="3.5" width="12" height="9" rx="1.5" />
+    <polyline points="2 5 8 9.5 14 5" />
+  </svg>
+);
+
+const PhoneIcon = () => (
+  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M14.5 11.4v2a1.3 1.3 0 0 1-1.4 1.3 13 13 0 0 1-5.7-2 12.9 12.9 0 0 1-4-4 13 13 0 0 1-2-5.7A1.3 1.3 0 0 1 2.6 1.5h2a1.3 1.3 0 0 1 1.3 1.13c.08.63.24 1.25.46 1.85a1.3 1.3 0 0 1-.3 1.4l-.85.84a10.6 10.6 0 0 0 4 4l.85-.85a1.3 1.3 0 0 1 1.4-.3c.6.23 1.22.38 1.85.46a1.3 1.3 0 0 1 1.13 1.32Z" />
+  </svg>
+);
+
+const ArrowOut = () => (
+  <svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <line x1="2" y1="5" x2="8" y2="5" />
+    <polyline points="5 2 8 5 5 8" />
+  </svg>
+);
+
 export function Footer() {
   return (
-    <footer className="footer">
-      <div className="w-layout-blockcontainer container-14 w-container">
-        <div className="w-layout-hflex grid-19">
-          <div className="footer-column-1">
-            <Link
-              href="/"
-              className="footer-brand"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 0,
-                textDecoration: "none",
-                marginBottom: "16px",
-              }}
-            >
+    <footer className="dh-footer">
+      <div className="dh-footer-bg" aria-hidden>
+        <span className="dh-footer-orb dh-footer-orb-a" />
+        <span className="dh-footer-orb dh-footer-orb-b" />
+        <div className="dh-footer-grid-pattern" />
+        <div className="dh-footer-top-glow" />
+      </div>
+
+      <div className="dh-footer-inner">
+        <div className="dh-footer-grid">
+          {/* Brand */}
+          <div className="dh-footer-brand-col">
+            <Link href="/" className="dh-footer-logo">
               <img
+                src="/assets/logo/developershub-icon-black.png"
+                alt="DevelopersHub Corporation"
+                className="dh-footer-logo-img"
                 loading="lazy"
-                src="/assets/logo/quad-icon.png"
-                alt="QUAD Solutions"
-                style={{
-                  height: "44px",
-                  width: "auto",
-                  display: "block",
-                  marginRight: "8px",
-                  mixBlendMode: "multiply",
-                }}
               />
-              <span
-                style={{
-                  display: "inline-flex",
-                  flexDirection: "column",
-                  lineHeight: 1,
-                  color: "var(--black-100)",
-                }}
-              >
-                <span style={{ fontSize: 23, lineHeight: 1, fontWeight: 500 }}>
-                  QUAD
-                </span>
-                <span
-                  className="italic-span"
-                  style={{
-                    fontSize: 18.5,
-                    lineHeight: 1,
-                    letterSpacing: 0,
-                    fontWeight: 400,
-                  }}
-                >
-                  Solutions
-                </span>
+              <span className="dh-footer-logo-text">
+                <span className="dh-footer-logo-strong">DevelopersHub</span>
+                <span className="dh-footer-logo-em">Corporation</span>
               </span>
             </Link>
-            <div className="text-block-32">
+            <p className="dh-footer-tagline">
               Empowering businesses with innovative AI and digital solutions.
               Let&apos;s create something amazing together.
-            </div>
-            <div className="div-block-42">
-              <a
-                href="https://www.instagram.com/quadsolutions.ai?igsh=bTA4dmF5cG45ZGNz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-icon w-inline-block"
-                aria-label="Instagram"
-              >
-                <img
-                  src="/assets/wf/67a5fb8bc33c7f25ab4e52d9/67b02256f67a8cad36930a39_si-insta.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/share/1L45uNjwa3/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-icon w-inline-block"
-                aria-label="Facebook"
-              >
-                <img
-                  src="/assets/wf/67a5fb8bc33c7f25ab4e52d9/si-facebook.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/quadsolution-ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-icon w-inline-block"
-                aria-label="LinkedIn"
-              >
-                <img
-                  src="/assets/wf/67a5fb8bc33c7f25ab4e52d9/67b02256c742c6b7cb28f718_si-linkedin.svg"
-                  loading="lazy"
-                  alt=""
-                />
-              </a>
+            </p>
+            <div className="dh-footer-social">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dh-footer-social-link"
+                  aria-label={s.label}
+                >
+                  {s.icon}
+                </a>
+              ))}
             </div>
           </div>
-          <div className="w-layout-hflex flex-block-2">
-            <div className="footer-column-2">
-              <div className="title">Sitemap</div>
-              <ul role="list" className="list-5 w-list-unstyled">
-                <li className="list-item-9">
-                  <Link
-                    href="/"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Home</div>
-                    <div className="nav-text second">Home</div>
+
+          {/* Sitemap */}
+          <nav className="dh-footer-nav" aria-label="Sitemap">
+            <div className="dh-footer-col-title">Sitemap</div>
+            <ul>
+              {NAV_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="dh-footer-link">
+                    <span className="dh-footer-link-arrow" aria-hidden>
+                      →
+                    </span>
+                    {l.label}
                   </Link>
                 </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/services"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Services</div>
-                    <div className="nav-text second">Services</div>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Company */}
+          <nav className="dh-footer-nav" aria-label="Company">
+            <div className="dh-footer-col-title">Company</div>
+            <ul>
+              {COMPANY_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="dh-footer-link">
+                    <span className="dh-footer-link-arrow" aria-hidden>
+                      →
+                    </span>
+                    {l.label}
                   </Link>
                 </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/case-studies"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Case Studies</div>
-                    <div className="nav-text second">Case Studies</div>
-                  </Link>
-                </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/specialists"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Specialists</div>
-                    <div className="nav-text second">Specialists</div>
-                  </Link>
-                </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/about-us"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">About Us</div>
-                    <div className="nav-text second">About Us</div>
-                  </Link>
-                </li>
-              </ul>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Contact */}
+          <div className="dh-footer-contact-col">
+            <div className="dh-footer-col-title">Reach us</div>
+
+            <div className="dh-footer-hq">
+              <span className="dh-footer-hq-label">
+                <PinIcon />
+                USA Headquarters
+              </span>
+              <p>30 N Gould St Ste R, Sheridan, WY 82801</p>
             </div>
-            <div className="footer-column-3">
-              <div className="title">Company</div>
-              <ul role="list" className="list-5 w-list-unstyled">
-                <li className="list-item-9">
-                  <Link
-                    href="/contact"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Contact Us</div>
-                    <div className="nav-text second">Contact Us</div>
-                  </Link>
-                </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/privacy-policy"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Privacy Policy</div>
-                    <div className="nav-text second">Privacy Policy</div>
-                  </Link>
-                </li>
-                <li className="list-item-9">
-                  <Link
-                    href="/terms"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">Terms of Service</div>
-                    <div className="nav-text second">Terms of Service</div>
-                  </Link>
-                </li>
-              </ul>
+
+            <div className="dh-footer-hq">
+              <span className="dh-footer-hq-label">
+                <PinIcon />
+                Pakistan Headquarters
+              </span>
+              <p>
+                Bahria Town Islamabad, Intellectual Village, Business
+                District
+              </p>
             </div>
-            <div className="footer-column-4">
-              <div className="title">Contact Details</div>
-              <ul role="list" className="list-5 w-list-unstyled">
-                <li className="list-item-9">
-                  <div className="text-block-32">
-                    30 N Gould St Ste R, Sheridan, WY 82801
-                  </div>
-                </li>
-                <li className="list-item-9">
-                  <a
-                    href="mailto:hello@quadsolutions.ai"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">hello@quadsolutions.ai</div>
-                    <div className="nav-text second">hello@quadsolutions.ai</div>
-                  </a>
-                </li>
-                <li className="list-item-9">
-                  <a
-                    href="tel:+13074272883"
-                    className="navigation-link for-footer w-inline-block"
-                  >
-                    <div className="nav-text first">+1 (307) 427-2883</div>
-                    <div className="nav-text second">+1 (307) 427-2883</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
+
+            <a
+              href="mailto:info@developershubcorp.com"
+              className="dh-footer-contact-line"
+            >
+              <span className="dh-footer-contact-icon">
+                <MailIcon />
+              </span>
+              info@developershubcorp.com
+            </a>
+
+            <a href="tel:+13074272883" className="dh-footer-contact-line">
+              <span className="dh-footer-contact-icon">
+                <PhoneIcon />
+              </span>
+              +1 (307) 427-2883
+            </a>
           </div>
         </div>
-        <div className="div-block-43">
-          <div className="w-layout-blockcontainer container-15 w-container">
-            <div className="div-block-209">
-              <div className="text-block-33">
-                © {new Date().getFullYear()} QUAD Solutions. All Rights Reserved.
-              </div>
-              <div className="div-block-210">
-                <Link
-                  href="/privacy-policy"
-                  className="navigation-link for-footer w-inline-block"
-                >
-                  <div className="nav-text first">Privacy Policy</div>
-                  <div className="nav-text second">Privacy Policy</div>
-                </Link>
-                <Link
-                  href="/terms"
-                  className="navigation-link for-footer w-inline-block"
-                >
-                  <div className="nav-text first">Terms</div>
-                  <div className="nav-text second">Terms</div>
-                </Link>
-                <Link
-                  href="/contact"
-                  className="navigation-link for-footer w-inline-block"
-                >
-                  <div className="nav-text first">Contact</div>
-                  <div className="nav-text second">Contact</div>
-                </Link>
-              </div>
-            </div>
+
+        <div className="dh-footer-bottom">
+          <div className="dh-footer-copy">
+            © {new Date().getFullYear()} DevelopersHub Corporation. All rights
+            reserved.
+          </div>
+          <div className="dh-footer-legal">
+            <Link href="/privacy-policy">Privacy</Link>
+            <span aria-hidden>·</span>
+            <Link href="/terms">Terms</Link>
+            <span aria-hidden>·</span>
+            <Link href="/contact" className="dh-footer-legal-cta">
+              Contact <ArrowOut />
+            </Link>
           </div>
         </div>
       </div>

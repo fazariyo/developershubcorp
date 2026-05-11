@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendBrevoEmail({
-      to: recipients.map((address) => ({ email: address, name: "QUAD Solutions" })),
+      to: recipients.map((address) => ({ email: address, name: "DevelopersHub Corporation" })),
       replyTo: { email, name },
       subject,
       htmlContent,

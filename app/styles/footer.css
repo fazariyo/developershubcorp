@@ -1,0 +1,502 @@
+/* Light footer — warm off-white with pastel gradient wash, matching site hero palette */
+
+.dh-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 120% 70% at 0% 0%,
+      rgba(217, 243, 252, 0.55) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 100% 70% at 100% 0%,
+      rgba(253, 241, 211, 0.4) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 100% 80% at 50% 100%,
+      rgba(248, 222, 234, 0.4) 0%,
+      transparent 60%
+    ),
+    #fafaf7;
+  color: rgba(27, 29, 30, 0.85);
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  padding: 96px 0 32px;
+  isolation: isolate;
+}
+
+/* Decorative background layer */
+.dh-footer-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dh-footer-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.dh-footer-orb-a {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, #a5d8e8 0%, transparent 70%);
+  top: -22%;
+  left: -8%;
+  animation: dh-footer-orb-drift 26s ease-in-out infinite;
+}
+
+.dh-footer-orb-b {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #f8c7d6 0%, transparent 70%);
+  bottom: -28%;
+  right: -8%;
+  animation: dh-footer-orb-drift 32s ease-in-out infinite reverse;
+  animation-delay: -10s;
+}
+
+@keyframes dh-footer-orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -28px) scale(1.07); }
+  66% { transform: translate(-24px, 30px) scale(0.97); }
+}
+
+.dh-footer-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(27, 29, 30, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 29, 30, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 0%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 0%, transparent 90%);
+  opacity: 0.7;
+}
+
+/* Subtle top edge accent — gradient hairline */
+.dh-footer-top-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.35) 30%,
+    rgba(236, 72, 153, 0.45) 50%,
+    rgba(99, 102, 241, 0.35) 70%,
+    transparent 100%
+  );
+}
+
+/* Inner container */
+.dh-footer-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Main grid */
+.dh-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr 0.9fr 1.3fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(27, 29, 30, 0.08);
+}
+
+/* ───── Brand column ───── */
+
+.dh-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 360px;
+}
+
+.dh-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1b1d1e;
+  align-self: flex-start;
+}
+
+.dh-footer-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dh-footer-logo:hover .dh-footer-logo-img {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.dh-footer-logo-text {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1;
+}
+
+.dh-footer-logo-strong {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1b1d1e;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.dh-footer-logo-em {
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(27, 29, 30, 0.55);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.dh-footer-tagline {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(27, 29, 30, 0.6);
+}
+
+/* Social icons */
+.dh-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.dh-footer-social-link {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(27, 29, 30, 0.1);
+  color: rgba(27, 29, 30, 0.7);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.dh-footer-social-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.dh-footer-social-link:hover {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px -8px rgba(236, 72, 153, 0.45);
+}
+
+.dh-footer-social-link:hover::before {
+  opacity: 1;
+}
+
+.dh-footer-social-link svg {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ───── Column titles ───── */
+
+.dh-footer-col-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(27, 29, 30, 0.55);
+  margin-bottom: 22px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.dh-footer-col-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+/* ───── Nav columns ───── */
+
+.dh-footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dh-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 14.5px;
+  color: rgba(27, 29, 30, 0.65);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.25s ease, gap 0.25s ease;
+  width: max-content;
+}
+
+.dh-footer-link-arrow {
+  display: inline-block;
+  font-size: 13px;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateX(-4px);
+  transition:
+    width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.dh-footer-link:hover {
+  color: #1b1d1e;
+  gap: 8px;
+}
+
+.dh-footer-link:hover .dh-footer-link-arrow {
+  width: 14px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ───── Contact column ───── */
+
+.dh-footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dh-footer-hq {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dh-footer-hq-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(27, 29, 30, 0.55);
+}
+
+.dh-footer-hq-label svg {
+  color: #ec4899;
+  flex-shrink: 0;
+}
+
+.dh-footer-hq p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(27, 29, 30, 0.75);
+  max-width: 280px;
+}
+
+.dh-footer-contact-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(27, 29, 30, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: max-content;
+}
+
+.dh-footer-contact-line:hover {
+  color: #1b1d1e;
+}
+
+.dh-footer-contact-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(27, 29, 30, 0.1);
+  color: rgba(27, 29, 30, 0.6);
+  flex-shrink: 0;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.dh-footer-contact-line:hover .dh-footer-contact-icon {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  border-color: transparent;
+  color: #fff;
+  transform: rotate(-6deg);
+}
+
+/* ───── Bottom strip ───── */
+
+.dh-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  font-size: 13px;
+  color: rgba(27, 29, 30, 0.5);
+}
+
+.dh-footer-copy {
+  margin: 0;
+}
+
+.dh-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dh-footer-legal a {
+  color: rgba(27, 29, 30, 0.6);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dh-footer-legal a:hover {
+  color: #1b1d1e;
+}
+
+.dh-footer-legal span {
+  color: rgba(27, 29, 30, 0.25);
+}
+
+.dh-footer-legal-cta svg {
+  transition: transform 0.25s ease;
+}
+
+.dh-footer-legal-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ───── Reduced motion ───── */
+
+@media (prefers-reduced-motion: reduce) {
+  .dh-footer-orb {
+    animation: none;
+  }
+  .dh-footer-logo-img,
+  .dh-footer-social-link,
+  .dh-footer-link,
+  .dh-footer-link-arrow,
+  .dh-footer-contact-icon {
+    transition: none;
+  }
+}
+
+/* ───── Responsive ───── */
+
+@media (max-width: 1024px) {
+  .dh-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 36px;
+  }
+  .dh-footer-brand-col {
+    grid-column: 1 / -1;
+    max-width: 520px;
+  }
+  .dh-footer-contact-col {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 36px;
+  }
+  .dh-footer-contact-col > .dh-footer-col-title {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dh-footer {
+    padding: 72px 0 28px;
+  }
+  .dh-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  .dh-footer-brand-col,
+  .dh-footer-contact-col {
+    grid-column: auto;
+    max-width: none;
+  }
+  .dh-footer-contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .dh-footer-bottom {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    align-items: center;
+  }
+  .dh-footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}

@@ -18,7 +18,7 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "QUAD Solutions transformed our single-product brand into a market leader. By combining cultural insights with technical ad optimization, they scaled our orders by 26× and helped us hit $50K+ in monthly revenue.",
+      "DevelopersHub Corporation transformed our single-product brand into a market leader. By combining cultural insights with technical ad optimization, they scaled our orders by 26× and helped us hit $50K+ in monthly revenue.",
     name: "MexiVida",
     role: "E-commerce Brand",
     initials: "MV",

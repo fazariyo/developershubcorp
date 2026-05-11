@@ -6,7 +6,7 @@ import "./case-study-details-page.css";
 export const metadata: Metadata = {
   title: "Case Study",
   description:
-    "A closer look at how Quad Solutions combined strategy, creative, and engineering to deliver measurable outcomes for a client engagement.",
+    "A closer look at how DevelopersHub Corporation combined strategy, creative, and engineering to deliver measurable outcomes for a client engagement.",
 };
 
 export default function CaseStudyDetailsPage() {

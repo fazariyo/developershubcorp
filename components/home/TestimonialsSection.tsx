@@ -5,7 +5,7 @@ export function TestimonialsSection() {
         <div className="w-layout-grid grid-9">
           <h2 className="testimonial-heading-h2">
             What our clients are saying{" "}
-            <span className="text-span-15">about QUAD Solutions</span>
+            <span className="text-span-15">about DevelopersHub Corporation</span>
           </h2>
         </div>
         <div className="w-layout-grid review-grid">
@@ -17,7 +17,7 @@ export function TestimonialsSection() {
             <div className="text-block-15">E-commerce Growth</div>
             <div className="div-block-28">
               <p className="heading-11">
-                QUAD scaled our orders 26× and helped us hit $50K+ in monthly
+                DevelopersHub scaled our orders 26× and helped us hit $50K+ in monthly
                 revenue — they understood our audience better than we did.
               </p>
               <div>

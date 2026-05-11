@@ -1,5 +1,6 @@
 @import "./styles/awakeagency.webflow.shared.css";
 @import "./styles/lenis.css";
+@import "./styles/footer.css";
 @import "./services/services-page.css";
 
 /* Match Webflow export: hide select headings until IX3 is ready */
