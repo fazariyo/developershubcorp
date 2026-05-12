@@ -73,22 +73,25 @@ export function CTASection({ className = "qs-svc-final-cta" }: CTASectionProps) 
       const services = data.getAll("services").map(String);
       const budget = (data.get("budget") as string | null) ?? "";
       const message = (data.get("message") as string | null) ?? "";
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/xvzllgaw", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "application/json", accept: "application/json" },
         body: JSON.stringify({
-          source: "cta",
+          source: "Homepage CTA",
           name,
           email,
           phone,
-          services,
+          services: services.join(", "),
           budget,
           message,
+          _subject: `New Homepage CTA enquiry from ${name}`,
         }),
       });
-      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      const body = (await res.json().catch(() => ({}))) as {
+        errors?: { message?: string }[];
+      };
       if (!res.ok) {
-        throw new Error(body.error ?? "Something went wrong");
+        throw new Error(body.errors?.[0]?.message ?? "Something went wrong");
       }
       setSubmitted(true);
     } catch (err) {
