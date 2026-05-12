@@ -4,7 +4,6 @@ import { TemplateNavbar } from "@/components/TemplateNavbar";
 import { Footer } from "@/components/Footer";
 import {
   HeroSection,
-  HeroVideoScroll,
   LogoMarqueeSection,
   AboutSection,
   ServicesSection,
@@ -23,7 +22,6 @@ export function HomeBody() {
       <div className="gradient-background" />
       <TemplateNavbar />
       <HeroSection />
-      <HeroVideoScroll />
       <LogoMarqueeSection />
       <AboutSection />
       <ServicesSection />
