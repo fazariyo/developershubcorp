@@ -26,6 +26,7 @@ export function TemplateNavbar() {
   const onSpecialists = pathname === "/specialists";
   const onCareers = pathname === "/careers";
   const onCourses = pathname === "/courses";
+  const onBlog = pathname === "/blog" || (pathname?.startsWith("/blog/") ?? false);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -166,6 +167,13 @@ export function TemplateNavbar() {
                 >
                   Courses
                 </Link>
+                <Link
+                  href="/blog"
+                  className={`nav-link-4${onBlog ? " w--current" : ""}`}
+                  aria-current={onBlog ? "page" : undefined}
+                >
+                  Blog
+                </Link>
               </li>
             </ul>
             <div className="div-block-50">
@@ -295,6 +303,15 @@ export function TemplateNavbar() {
                   aria-current={onCourses ? "page" : undefined}
                 >
                   Courses
+                </Link>
+              </li>
+              <li className="list-item-12">
+                <Link
+                  href="/blog"
+                  className={`link-6${onBlog ? " w--current" : ""}`}
+                  aria-current={onBlog ? "page" : undefined}
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
