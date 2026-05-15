@@ -1,0 +1,252 @@
+/* Legal pages (Privacy Policy, Terms of Service) — shared layout */
+
+.dh-legal-page {
+  background: #fff;
+  color: #1b1d1e;
+  overflow-x: clip;
+}
+
+.dh-legal-page .dh-legal-inner {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+/* ───────── Hero ───────── */
+
+.dh-legal-hero {
+  position: relative;
+  padding: 120px 0 64px;
+  background: radial-gradient(
+    ellipse 152% 102% at 50% 0%,
+    rgb(217, 243, 252) 0%,
+    rgb(255, 255, 255) 55%,
+    rgb(253, 241, 211) 100%
+  );
+}
+
+.dh-legal-hero .dh-legal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.dh-legal-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 0.8px solid rgba(27, 29, 30, 0.1);
+  background: rgba(27, 29, 30, 0.04);
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(27, 29, 30, 0.6);
+}
+
+.dh-legal-title {
+  margin: 0;
+  max-width: 760px;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #1b1d1e;
+}
+
+.dh-legal-italic {
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.dh-legal-lede {
+  max-width: 640px;
+  margin: 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(27, 29, 30, 0.65);
+}
+
+.dh-legal-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(27, 29, 30, 0.5);
+}
+
+.dh-legal-meta-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(27, 29, 30, 0.25);
+}
+
+/* ───────── Body ───────── */
+
+.dh-legal-body {
+  padding: 64px 0 120px;
+}
+
+.dh-legal-body .dh-legal-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dh-legal-intro {
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(27, 29, 30, 0.78);
+  margin: 0;
+  padding: 24px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(73, 40, 253, 0.12);
+  background: linear-gradient(
+    135deg,
+    rgba(73, 40, 253, 0.04) 0%,
+    rgba(236, 72, 153, 0.04) 100%
+  );
+}
+
+.dh-legal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dh-legal-section h2 {
+  margin: 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: #1b1d1e;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.dh-legal-section h2 .dh-legal-num {
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.7em;
+  color: rgba(73, 40, 253, 0.85);
+}
+
+.dh-legal-section h3 {
+  margin: 8px 0 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: #1b1d1e;
+}
+
+.dh-legal-section p,
+.dh-legal-section li {
+  margin: 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(27, 29, 30, 0.75);
+}
+
+.dh-legal-section ul {
+  margin: 4px 0 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dh-legal-section li::marker {
+  color: rgba(73, 40, 253, 0.6);
+}
+
+.dh-legal-section a {
+  color: #4928fd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.dh-legal-section a:hover {
+  color: #ec4899;
+}
+
+.dh-legal-section strong {
+  color: #1b1d1e;
+  font-weight: 600;
+}
+
+/* ───────── Contact footer card ───────── */
+
+.dh-legal-contact-card {
+  margin-top: 16px;
+  padding: 28px 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(27, 29, 30, 0.1);
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dh-legal-contact-card h3 {
+  margin: 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1d1e;
+}
+
+.dh-legal-contact-card p {
+  margin: 0;
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(27, 29, 30, 0.7);
+}
+
+.dh-legal-contact-card a {
+  color: #4928fd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dh-legal-contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* ───────── Responsive ───────── */
+
+@media (max-width: 640px) {
+  .dh-legal-hero {
+    padding: 96px 0 48px;
+  }
+  .dh-legal-body {
+    padding: 48px 0 96px;
+  }
+  .dh-legal-intro {
+    padding: 20px 22px;
+    font-size: 16px;
+  }
+  .dh-legal-contact-card {
+    padding: 22px 22px;
+  }
+}
