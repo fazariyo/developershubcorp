@@ -126,7 +126,7 @@ export function LogoMarqueeSection() {
         </div>
 
         <h2 className="dh-onestop-headline">
-          2,500+ employees working under{" "}
+          2,500+ employees working globally under{" "}
           <span className="dh-onestop-italic">
             highly experienced specialists.
           </span>
