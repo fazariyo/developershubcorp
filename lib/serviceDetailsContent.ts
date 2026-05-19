@@ -213,8 +213,8 @@ function findMember(name: string): TeamMember {
 }
 
 const AGHA = findMember("Agha Moiz");
-const MUSTAFA = findMember("Mustafa Hassan");
-const YOUSAF = findMember("Yousaf Shah");
+const MUSTAFA = findMember("Zohaib Alam");
+const YOUSAF = findMember("Shehryar Khan");
 const MUSAVER = findMember("Musaver Khan");
 
 function specialist(

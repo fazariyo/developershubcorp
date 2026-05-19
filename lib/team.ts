@@ -9,18 +9,18 @@ export type TeamMember = {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Mustafa Hassan",
-    position: "Digital Marketing Specialist",
+    name: "Zohaib Alam",
+    position: "Growth Marketing Specialist",
     bio: "Drives data-led campaigns that turn audiences into loyal customers.",
-    image: "/assets/team/mustafa-3.jpg",
+    image: "/assets/team/zohaib-3.jpg",
     dataWId: "b31a341f-0659-611a-378d-b9b299a4f9b7",
     imageWId: "56bb2451-170e-89ce-c69f-6cfb15fd42b5",
   },
   {
-    name: "Yousaf Shah",
+    name: "Shehryar Khan",
     position: "Creative Manager",
     bio: "Shapes brand stories and visual systems that capture attention and build trust.",
-    image: "/assets/team/yousuf-3.jpg",
+    image: "/assets/team/shehryar-3.jpg",
     dataWId: "0a28a6a2-8b8a-d8c2-5458-5994b3ad5898",
     imageWId: "fe758f9d-39d6-cb14-52e0-c9fa891a9a74",
   },
