@@ -103,7 +103,7 @@ export function BlogPostLayout({ post, toc, children }: BlogPostLayoutProps) {
                 <span>Share this article:</span>
                 <a
                   className="dh-post-share-pill"
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://developershub.com/blog/${post.slug}`)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://developershubcorp.com/blog/${post.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -111,7 +111,7 @@ export function BlogPostLayout({ post, toc, children }: BlogPostLayoutProps) {
                 </a>
                 <a
                   className="dh-post-share-pill"
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://developershub.com/blog/${post.slug}`)}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://developershubcorp.com/blog/${post.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -119,7 +119,7 @@ export function BlogPostLayout({ post, toc, children }: BlogPostLayoutProps) {
                 </a>
                 <a
                   className="dh-post-share-pill"
-                  href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Thought you'd like this: https://developershub.com/blog/${post.slug}`)}`}
+                  href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Thought you'd like this: https://developershubcorp.com/blog/${post.slug}`)}`}
                 >
                   Email
                 </a>

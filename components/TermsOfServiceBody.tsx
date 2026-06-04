@@ -50,7 +50,7 @@ export function TermsOfServiceBody() {
             </h2>
             <p>
               By using{" "}
-              <a href="https://developershub.com">developershub.com</a>,
+              <a href="https://developershubcorp.com">developershubcorp.com</a>,
               submitting a contact form, signing a statement of work, or
               otherwise engaging our services, you confirm that you have read,
               understood, and agreed to these Terms and our{" "}

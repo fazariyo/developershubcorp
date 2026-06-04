@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("video-post-production");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/creative-production/video-post-production" },
 };
 
 export default function VideoPostProductionPage() {

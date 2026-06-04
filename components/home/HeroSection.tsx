@@ -168,9 +168,9 @@ export function HeroSection() {
           data-w-id="aca08924-3373-f5fc-69ef-f496c3c5cc2e"
           className={`para-txt${skeletonClass ? ` qs-para-skeleton` : ""}`}
         >
-          Tired of juggling multiple agencies? We bring together <strong>specialized teams</strong> in 
-          Growth, Creative, Digital, and Al all working as one to <strong>scale your business</strong> and 
-          simplify your life.
+          Tired of juggling multiple agencies? We bring together <strong>specialized teams</strong> in
+          growth marketing, creative production, software development, and AI automation — all working
+          as one to <strong>scale your business</strong> and simplify your life.
         </p>
         <div className="w-layout-grid grid-21 qs-hero-cta-row">
           <div className="getstarted-btn">

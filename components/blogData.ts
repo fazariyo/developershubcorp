@@ -18,6 +18,64 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "ai-automation-cost",
+    title:
+      "How Much Does AI Automation Cost in 2026? Real Pricing From 60+ Projects",
+    excerpt:
+      "From $3k chatbots to $150k autonomous agent systems — a transparent breakdown of what AI automation actually costs, what drives the price up or down, and how fast it pays for itself.",
+    category: "AI Automation Strategy",
+    readTime: "11 min read",
+    publishedAt: "June 2, 2026",
+    publishedISO: "2026-06-02",
+    author: {
+      name: "DevelopersHub Editorial",
+      role: "AI Automation Team",
+    },
+    keywords: [
+      "AI automation cost",
+      "how much does AI automation cost",
+      "AI automation pricing",
+      "AI chatbot development cost",
+      "AI agent development cost",
+      "business process automation cost",
+      "AI automation ROI",
+      "AI automation agency pricing",
+    ],
+    heroGradient:
+      "radial-gradient(ellipse 120% 80% at 20% 0%, rgba(121,212,94,0.18) 0%, rgba(255,255,255,0) 60%), radial-gradient(ellipse 100% 80% at 90% 100%, rgba(73,40,253,0.16) 0%, rgba(255,255,255,0) 60%), linear-gradient(180deg, #e9fbe2 0%, #ffffff 100%)",
+    heroAccent: "#4928fd",
+    heroEyebrow: "AI Automation · Pricing Guide",
+  },
+  {
+    slug: "custom-software-vs-off-the-shelf",
+    title:
+      "Custom Software vs Off-the-Shelf: The Real 5-Year Cost Comparison (2026)",
+    excerpt:
+      "SaaS subscriptions look cheap until you count seats, workarounds, and the features you'll never get. Here's a framework — with real numbers — for deciding when custom software development pays off.",
+    category: "Software Development",
+    readTime: "12 min read",
+    publishedAt: "May 26, 2026",
+    publishedISO: "2026-05-26",
+    author: {
+      name: "DevelopersHub Editorial",
+      role: "Digital Products Team",
+    },
+    keywords: [
+      "custom software vs off the shelf",
+      "custom software development cost",
+      "custom software development company",
+      "build vs buy software",
+      "off the shelf software disadvantages",
+      "custom software development services",
+      "bespoke software development",
+      "internal tools development",
+    ],
+    heroGradient:
+      "radial-gradient(ellipse 120% 80% at 80% 0%, rgba(73,40,253,0.16) 0%, rgba(255,255,255,0) 60%), radial-gradient(ellipse 100% 80% at 10% 100%, rgba(244,136,154,0.16) 0%, rgba(255,255,255,0) 60%), linear-gradient(180deg, #fef3f5 0%, #ffffff 100%)",
+    heroAccent: "#4928fd",
+    heroEyebrow: "Software · Build vs Buy",
+  },
+  {
     slug: "ai-automation-for-small-business",
     title:
       "AI Automation for Small Business: The Complete 2026 Guide to Saving 20+ Hours a Week",

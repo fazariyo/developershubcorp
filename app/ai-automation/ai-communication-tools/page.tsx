@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("ai-communication-tools");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/ai-automation/ai-communication-tools" },
 };
 
 export default function AiCommunicationToolsPage() {

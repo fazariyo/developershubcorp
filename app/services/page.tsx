@@ -4,9 +4,10 @@ import "../case-studies/case-studies-page.css";
 import "./services-page.css";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Digital Agency Services — AI Automation, Software Development, Marketing & Creative",
   description:
-    "Specialized teams across marketing, content, software, and AI automation — four disciplines working as one digital department for your business.",
+    "Explore DevelopersHub Corporation's services: AI automation, custom software & web development, mobile apps, growth marketing, and creative production — four disciplines working as one digital department.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

@@ -21,15 +21,69 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
+const SITE_URL = "https://developershubcorp.com";
+
 export const metadata: Metadata = {
   title: {
-    default: "DevelopersHub Corporation — Your Entire Digital Department Under One Roof",
+    default:
+      "DevelopersHub Corporation — AI Automation, Software Development & Growth Marketing Agency",
     template: "%s | DevelopersHub Corporation",
   },
   description:
-    "Tired of juggling multiple agencies? We bring together specialized teams in Growth, Creative, Digital, and Al—all working as one to scale your business and simplify your life.",
+    "DevelopersHub Corporation is a full-service digital agency — AI automation services, custom software & web development, growth marketing, and creative production. Your entire digital department under one roof.",
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://developershub.com"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: "DevelopersHub Corporation",
+  openGraph: {
+    type: "website",
+    siteName: "DevelopersHub Corporation",
+    url: SITE_URL,
+    title:
+      "DevelopersHub Corporation — AI Automation, Software Development & Growth Marketing Agency",
+    description:
+      "Full-service digital agency: AI automation, custom software & web development, growth marketing, and creative production — your entire digital department under one roof.",
+    images: [
+      {
+        url: "/assets/logo/developershub-icon-black.png",
+        alt: "DevelopersHub Corporation logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title:
+      "DevelopersHub Corporation — AI Automation, Software Development & Growth Marketing Agency",
+    description:
+      "Full-service digital agency: AI automation, custom software & web development, growth marketing, and creative production.",
+    images: ["/assets/logo/developershub-icon-black.png"],
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "DevelopersHub Corporation",
+  url: SITE_URL,
+  logo: `${SITE_URL}/assets/logo/developershub-icon-black.png`,
+  description:
+    "Full-service digital agency offering AI automation services, custom software and web development, mobile app development, growth marketing, and creative production.",
+  email: "info@developershubcorp.com",
+  telephone: "+1-307-427-2883",
+  sameAs: [
+    "https://www.linkedin.com/company/developershub-corporation",
+    "https://www.instagram.com/developershubcorporation",
+    "https://www.facebook.com/p/DevelopersHub-Corporation-61563501711991/",
+  ],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "DevelopersHub Corporation",
+  url: SITE_URL,
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const webflowTouchClass = `!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);`;
@@ -50,6 +104,14 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`body ${interTight.className}`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
         {/* Preload the hero gradient so `document.readyState === "complete"`
            (the event Webflow IX3 uses to fire its hero load animation) happens
            as early as possible — otherwise IX3 replays the animation after the

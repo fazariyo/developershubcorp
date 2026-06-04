@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("mobile-app-development");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/digital-products/mobile-app-development" },
 };
 
 export default function MobileAppDevelopmentPage() {

@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("visual-content-creation");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/creative-production/visual-content-creation" },
 };
 
 export default function VisualContentCreationPage() {

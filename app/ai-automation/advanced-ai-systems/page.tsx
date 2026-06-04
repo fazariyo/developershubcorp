@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("advanced-ai-systems");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/ai-automation/advanced-ai-systems" },
 };
 
 export default function AdvancedAiSystemsPage() {

@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("strategic-optimization");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/growth-marketing/strategic-optimization" },
 };
 
 export default function StrategicOptimizationPage() {

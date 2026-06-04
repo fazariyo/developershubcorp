@@ -3,7 +3,7 @@ import { BlogIndexBody } from "@/components/BlogIndexBody";
 import { BLOG_POSTS } from "@/components/blogData";
 import "./blog.css";
 
-const SITE_URL = "https://developershub.com";
+const SITE_URL = "https://developershubcorp.com";
 
 export const metadata: Metadata = {
   title:

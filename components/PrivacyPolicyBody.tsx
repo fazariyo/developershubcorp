@@ -41,7 +41,7 @@ export function PrivacyPolicyBody() {
             information you share with us. This Privacy Policy describes how
             we collect, use, disclose, and safeguard information when you
             visit{" "}
-            <a href="https://developershub.com">developershub.com</a>, engage
+            <a href="https://developershubcorp.com">developershubcorp.com</a>, engage
             our services, or otherwise interact with us. By using our website
             or services, you agree to the practices described below.
           </p>

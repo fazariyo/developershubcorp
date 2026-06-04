@@ -10,9 +10,13 @@ import {
   SmallBusinessVisual,
   WorkflowToolsVisual,
   AgentsVsAutomationVisual,
+  AutomationCostVisual,
+  CustomVsShelfVisual,
 } from "@/components/BlogVisuals";
 
 const VISUAL_BY_SLUG = {
+  "ai-automation-cost": AutomationCostVisual,
+  "custom-software-vs-off-the-shelf": CustomVsShelfVisual,
   "ai-automation-for-small-business": SmallBusinessVisual,
   "best-ai-workflow-automation-tools": WorkflowToolsVisual,
   "ai-agents-vs-automation-business": AgentsVsAutomationVisual,
