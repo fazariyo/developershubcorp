@@ -33,8 +33,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: ChangeFr
   { path: "/creative-production/visual-content-creation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/creative-production/video-post-production", priority: 0.8, changeFrequency: "monthly" },
   { path: "/creative-production/ai-generated-content", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/privacy-policy", priority: 0.8, changeFrequency: "yearly" },
-  { path: "/terms", priority: 0.8, changeFrequency: "yearly" },
+  { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];
 
 const CASE_STUDY_PROJECTS: { slug: string; priority: number }[] = [
