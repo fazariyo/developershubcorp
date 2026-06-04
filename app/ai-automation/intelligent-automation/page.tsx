@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("intelligent-automation");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/ai-automation/intelligent-automation" },
 };
 
 export default function IntelligentAutomationPage() {

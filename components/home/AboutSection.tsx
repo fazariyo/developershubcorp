@@ -26,9 +26,10 @@ export function AboutSection() {
                 marginRight: "auto",
               }}
             >
-              We combine deep expertise with cutting-edge technology to deliver
-              strategies that don&apos;t just look good — they drive measurable
-              results.
+              We combine deep expertise in AI automation, custom software
+              development, and growth marketing with cutting-edge technology to
+              deliver strategies that don&apos;t just look good — they drive
+              measurable results.
             </p>
             <div className="bedges-wrapper">
               <div

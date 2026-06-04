@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("paid-advertising");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/growth-marketing/paid-advertising" },
 };
 
 export default function PaidAdvertisingPage() {

@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("ai-generated-content");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/creative-production/ai-generated-content" },
 };
 
 export default function AiGeneratedContentPage() {

@@ -408,3 +408,136 @@ export function PlatformsGridVisual() {
     </svg>
   );
 }
+
+/**
+ * SVG hero illustration for: How Much Does AI Automation Cost.
+ * Concept: price breakdown card with rising ROI curve.
+ */
+export function AutomationCostVisual({ className }: VisualProps) {
+  return (
+    <div className={className}>
+      <svg
+        viewBox="0 0 800 600"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="AI automation cost and ROI breakdown illustration"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="acBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#e9fbe2" />
+            <stop offset="100%" stopColor="#e6f0ff" />
+          </linearGradient>
+          <linearGradient id="acCurve" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#4928fd" />
+            <stop offset="100%" stopColor="#5fc145" />
+          </linearGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#acBg)" />
+
+        {/* ROI curve */}
+        <path
+          d="M80 480 C 240 470, 320 420, 420 330 C 520 240, 620 180, 720 150"
+          fill="none"
+          stroke="url(#acCurve)"
+          strokeWidth="5"
+          strokeLinecap="round"
+        />
+        <circle cx="720" cy="150" r="10" fill="#5fc145" />
+
+        {/* Price card */}
+        <g transform="translate(110,120)">
+          <rect width="250" height="190" rx="20" fill="#fff" stroke="rgba(27,29,30,0.08)" />
+          <text x="24" y="42" fontFamily="Inter Tight, sans-serif" fontSize="14" fill="rgba(27,29,30,0.55)">Typical SMB project</text>
+          <text x="24" y="86" fontFamily="Inter Tight, sans-serif" fontSize="34" fontWeight="700" fill="#1b1d1e">$3k – $25k</text>
+          <line x1="24" y1="108" x2="226" y2="108" stroke="rgba(27,29,30,0.1)" />
+          <text x="24" y="136" fontFamily="Inter Tight, sans-serif" fontSize="13" fill="rgba(27,29,30,0.6)">Build + integration</text>
+          <text x="24" y="160" fontFamily="Inter Tight, sans-serif" fontSize="13" fill="rgba(27,29,30,0.6)">$200 – $1.5k / mo to run</text>
+        </g>
+
+        {/* ROI badge */}
+        <g transform="translate(520,330)">
+          <rect width="180" height="84" rx="18" fill="#1b1d1e" />
+          <text x="22" y="36" fontFamily="Inter Tight, sans-serif" fontSize="13" fill="rgba(255,255,255,0.65)">Payback period</text>
+          <text x="22" y="64" fontFamily="Inter Tight, sans-serif" fontSize="24" fontWeight="700" fill="#79d45e">2–6 months</text>
+        </g>
+
+        {/* Coin stack */}
+        <g transform="translate(160,400)">
+          {[0, 1, 2, 3].map((i) => (
+            <ellipse key={i} cx="60" cy={70 - i * 18} rx="52" ry="16" fill="#fff" stroke="#4928fd" strokeWidth="2" />
+          ))}
+          <text x="60" y="20" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="20" fontWeight="700" fill="#4928fd">$</text>
+        </g>
+
+        {/* Floating data points */}
+        <g fill="#4928fd">
+          <circle cx="430" cy="120" r="4" />
+          <circle cx="620" cy="90" r="3" />
+          <circle cx="480" cy="500" r="3" />
+          <circle cx="320" cy="520" r="4" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+/**
+ * SVG hero illustration for: Custom Software vs Off-the-Shelf.
+ * Concept: tailored building blocks vs a sealed box on a balance scale.
+ */
+export function CustomVsShelfVisual({ className }: VisualProps) {
+  return (
+    <div className={className}>
+      <svg
+        viewBox="0 0 800 600"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Custom software versus off-the-shelf software comparison illustration"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="csBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#fef3f5" />
+            <stop offset="100%" stopColor="#e6f0ff" />
+          </linearGradient>
+          <linearGradient id="csPurple" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7a5dff" />
+            <stop offset="100%" stopColor="#4928fd" />
+          </linearGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#csBg)" />
+
+        {/* Divider */}
+        <line x1="400" y1="80" x2="400" y2="520" stroke="rgba(27,29,30,0.12)" strokeDasharray="6 8" strokeWidth="2" />
+
+        {/* Custom side: modular blocks */}
+        <g>
+          <rect x="100" y="320" width="90" height="90" rx="14" fill="url(#csPurple)" />
+          <rect x="200" y="320" width="90" height="90" rx="14" fill="#fff" stroke="#4928fd" strokeWidth="2" />
+          <rect x="100" y="220" width="90" height="90" rx="14" fill="#fff" stroke="#4928fd" strokeWidth="2" />
+          <rect x="200" y="220" width="90" height="90" rx="14" fill="#79d45e" />
+          <rect x="150" y="120" width="90" height="90" rx="14" fill="#fff" stroke="#f4889a" strokeWidth="2" />
+          <text x="195" y="465" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="16" fontWeight="600" fill="#1b1d1e">Custom software</text>
+          <text x="195" y="488" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="12" fill="rgba(27,29,30,0.6)">Built around your process</text>
+        </g>
+
+        {/* Off-the-shelf side: sealed box */}
+        <g>
+          <rect x="510" y="180" width="180" height="180" rx="18" fill="#fff" stroke="rgba(27,29,30,0.15)" strokeWidth="2" />
+          <path d="M510 240 H690" stroke="rgba(27,29,30,0.15)" strokeWidth="2" />
+          <rect x="575" y="160" width="50" height="40" rx="8" fill="#1b1d1e" />
+          <text x="600" y="300" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="30" fontWeight="700" fill="rgba(27,29,30,0.25)">SaaS</text>
+          <text x="600" y="465" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="16" fontWeight="600" fill="#1b1d1e">Off-the-shelf</text>
+          <text x="600" y="488" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="12" fill="rgba(27,29,30,0.6)">Fast start, fixed shape</text>
+        </g>
+
+        {/* VS badge */}
+        <g transform="translate(366,266)">
+          <circle cx="34" cy="34" r="34" fill="#1b1d1e" />
+          <text x="34" y="41" textAnchor="middle" fontFamily="Inter Tight, sans-serif" fontSize="18" fontWeight="700" fill="#fff">VS</text>
+        </g>
+      </svg>
+    </div>
+  );
+}

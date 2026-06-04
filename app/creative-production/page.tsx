@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("creative-production");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/creative-production" },
 };
 
 export default function CreativeProductionPage() {

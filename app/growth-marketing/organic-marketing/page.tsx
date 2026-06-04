@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("organic-marketing");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/growth-marketing/organic-marketing" },
 };
 
 export default function OrganicMarketingPage() {

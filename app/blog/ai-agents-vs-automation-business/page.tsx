@@ -6,7 +6,7 @@ import { getBlogPostBySlug } from "@/components/blogData";
 import "../blog.css";
 
 const SLUG = "ai-agents-vs-automation-business";
-const SITE_URL = "https://developershub.com";
+const SITE_URL = "https://developershubcorp.com";
 const post = getBlogPostBySlug(SLUG)!;
 
 export const metadata: Metadata = {

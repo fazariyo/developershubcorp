@@ -243,7 +243,7 @@ function specialist(
 
 const BRAND_STRATEGY: ServiceDetailsContent = {
   slug: "brand-strategy",
-  documentTitle: "Brand Strategy | DevelopersHub Corporation",
+  documentTitle: "Brand Strategy Services",
   metaDescription:
     "Transform your brand with expert strategy — from positioning to visual identity, comprehensive creative services for lasting growth.",
   hero: {
@@ -565,9 +565,9 @@ const AI_EXPLORE_CARDS: ServiceExploreCard[] = [
 
 const AI: ServiceDetailsContent = {
   slug: "ai-automation",
-  documentTitle: "AI & Automation | DevelopersHub Corporation",
+  documentTitle: "AI Automation Services — Workflows, Chatbots & AI Agents",
   metaDescription:
-    "Intelligent automation, AI communication tools, and advanced AI systems — engineered to remove bottlenecks, accelerate execution, and turn fragmented operations into measurable flow.",
+    "AI automation services for business — intelligent workflow automation, AI chatbots, and custom AI agents engineered to remove bottlenecks, cut costs, and turn fragmented operations into measurable flow.",
   hero: {
     line1: "AI automations that",
     line2Prefix: "actually ",
@@ -807,9 +807,9 @@ const AI: ServiceDetailsContent = {
 
 const INTELLIGENT_AUTOMATION: ServiceDetailsContent = {
   slug: "intelligent-automation",
-  documentTitle: "Intelligent Automation | DevelopersHub Corporation",
+  documentTitle: "Intelligent Automation & Business Process Automation Services",
   metaDescription:
-    "End-to-end workflow, GTM, and business process automation that removes manual bottlenecks and connects sales, ops, and support into one intelligent flow.",
+    "Business process automation services — end-to-end workflow and GTM automation that removes manual bottlenecks and connects sales, ops, and support into one intelligent flow.",
   hero: {
     line1: "Intelligent automation",
     line2Prefix: "for growth, ",
@@ -1046,9 +1046,9 @@ const INTELLIGENT_AUTOMATION: ServiceDetailsContent = {
 
 const AI_COMMUNICATION: ServiceDetailsContent = {
   slug: "ai-communication-tools",
-  documentTitle: "AI Communication Tools | DevelopersHub Corporation",
+  documentTitle: "AI Chatbot Development & Customer Service Automation",
   metaDescription:
-    "AI-powered chat, support, and response systems that classify, draft, route, and resolve conversations faster — with human-quality context.",
+    "AI chatbot development services — AI-powered chat, support, and response systems that classify, draft, route, and resolve customer conversations faster with human-quality context.",
   hero: {
     line1: "AI communication",
     line2Prefix: "where it ",
@@ -1285,9 +1285,9 @@ const AI_COMMUNICATION: ServiceDetailsContent = {
 
 const ADVANCED_AI: ServiceDetailsContent = {
   slug: "advanced-ai-systems",
-  documentTitle: "Advanced AI Systems | DevelopersHub Corporation",
+  documentTitle: "Custom AI Development — Autonomous AI Agents & Integrations",
   metaDescription:
-    "Autonomous AI agents, AI-driven insights, and custom AI integrations engineered for the workflows where your team spends the most time.",
+    "Custom AI development — autonomous AI agents, AI-driven insights, and custom AI integrations engineered for the workflows where your team spends the most time.",
   hero: {
     line1: "Advanced AI systems",
     line2Prefix: "for ",
@@ -1539,7 +1539,7 @@ const MARKETING_EXPLORE_CARDS: ServiceExploreCard[] = [
     tagColor: "#16a34a",
     cardBg: "rgba(121,212,94,0.05)",
     title: "Organic Marketing",
-    desc: "SEO, social, and content programs that compound — building durable demand, audience equity, and category leadership without renting every click.",
+    desc: "SEO services and content marketing programs that compound — building durable organic demand, audience equity, and category leadership without renting every click.",
     chips: ["SEO", "Social Media", "Brand Content"],
     href: "/growth-marketing/organic-marketing",
   },
@@ -1615,7 +1615,7 @@ const DIGITAL_EXPLORE_CARDS: ServiceExploreCard[] = [
     tagColor: "#4928fd",
     cardBg: "rgba(73,40,253,0.05)",
     title: "Web Development",
-    desc: "Custom websites, e-commerce platforms, and conversion-tuned landing pages — designed for speed, accessibility, and clean performance instrumentation.",
+    desc: "Professional web development services — custom websites, e-commerce platforms, and conversion-tuned landing pages designed for speed, accessibility, and SEO performance.",
     chips: ["Custom Sites", "E-commerce", "Landing Pages"],
     href: "/digital-products/web-development",
   },
@@ -1635,7 +1635,7 @@ const DIGITAL_EXPLORE_CARDS: ServiceExploreCard[] = [
     tagColor: "#7c3aed",
     cardBg: "rgba(186,129,238,0.05)",
     title: "Custom Software Solutions",
-    desc: "Internal tools, business process software, and scalable digital products tailored to the specific operational shape of your business.",
+    desc: "Custom software development company building internal tools, business process software, and scalable digital products tailored to the specific operational shape of your business.",
     chips: ["Internal Tools", "Process Software", "Digital Products"],
     href: "/digital-products/custom-software-solutions",
   },
@@ -1653,7 +1653,7 @@ const DIGITAL_EXPLORE_CARDS: ServiceExploreCard[] = [
 
 const PAID_ADVERTISING: ServiceDetailsContent = {
   slug: "paid-advertising",
-  documentTitle: "Paid Advertising | DevelopersHub Corporation",
+  documentTitle: "Paid Advertising & PPC Management Services",
   metaDescription:
     "Performance media across Meta, Google, TikTok, LinkedIn, and Pinterest — built to acquire customers profitably and scale spend with clear unit economics.",
   hero: {
@@ -1810,9 +1810,9 @@ const PAID_ADVERTISING: ServiceDetailsContent = {
 
 const ORGANIC_MARKETING: ServiceDetailsContent = {
   slug: "organic-marketing",
-  documentTitle: "Organic Marketing | DevelopersHub Corporation",
+  documentTitle: "SEO & Content Marketing Services",
   metaDescription:
-    "SEO, social, and content programs that compound — building durable demand, audience equity, and category leadership without renting every click.",
+    "SEO services and content marketing programs that compound — building durable organic demand, audience equity, and category leadership without renting every click.",
   hero: {
     line1: "Organic growth that",
     line2Prefix: "compounds, ",
@@ -1938,7 +1938,7 @@ const ORGANIC_MARKETING: ServiceDetailsContent = {
 
 const STRATEGIC_OPTIMIZATION: ServiceDetailsContent = {
   slug: "strategic-optimization",
-  documentTitle: "Strategic Optimization | DevelopersHub Corporation",
+  documentTitle: "Conversion Rate Optimization & Marketing Analytics",
   metaDescription:
     "Audience targeting, funnel diagnostics, and campaign analysis that turn raw performance data into the next round of compounding growth decisions.",
   hero: {
@@ -2066,7 +2066,7 @@ const STRATEGIC_OPTIMIZATION: ServiceDetailsContent = {
 
 const VISUAL_CONTENT_CREATION: ServiceDetailsContent = {
   slug: "visual-content-creation",
-  documentTitle: "Visual Content Creation | DevelopersHub Corporation",
+  documentTitle: "Visual Content Creation & Brand Design Services",
   metaDescription:
     "Product photography, brand identity systems, and platform-ready social visuals built to make your brand recognisable in a 1.5-second scroll.",
   hero: {
@@ -2194,7 +2194,7 @@ const VISUAL_CONTENT_CREATION: ServiceDetailsContent = {
 
 const VIDEO_POST_PRODUCTION: ServiceDetailsContent = {
   slug: "video-post-production",
-  documentTitle: "Video & Post-Production | DevelopersHub Corporation",
+  documentTitle: "Video Production & Post-Production Services",
   metaDescription:
     "Commercials, ad creatives, and edited content engineered for paid performance and organic reach — colour, sound, and pacing handled end-to-end.",
   hero: {
@@ -2322,7 +2322,7 @@ const VIDEO_POST_PRODUCTION: ServiceDetailsContent = {
 
 const AI_GENERATED_CONTENT: ServiceDetailsContent = {
   slug: "ai-generated-content",
-  documentTitle: "AI-Generated Content | DevelopersHub Corporation",
+  documentTitle: "AI-Generated Content & UGC Ad Creative at Scale",
   metaDescription:
     "UGC-style, cinematic, and animated content produced with AI — built to scale creative volume across Meta, YouTube, TikTok, and podcast inventory.",
   hero: {
@@ -2450,9 +2450,9 @@ const AI_GENERATED_CONTENT: ServiceDetailsContent = {
 
 const WEB_DEVELOPMENT: ServiceDetailsContent = {
   slug: "web-development",
-  documentTitle: "Web Development | DevelopersHub Corporation",
+  documentTitle: "Web Development Services — Custom Websites & E-Commerce",
   metaDescription:
-    "Custom websites, e-commerce platforms, and conversion-tuned landing pages — designed for speed, accessibility, and clean performance instrumentation.",
+    "Professional web development services — custom websites, e-commerce platforms, and conversion-tuned landing pages designed for speed, accessibility, and SEO performance.",
   hero: {
     line1: "Websites built",
     line2Prefix: "for ",
@@ -2578,9 +2578,9 @@ const WEB_DEVELOPMENT: ServiceDetailsContent = {
 
 const MOBILE_APP_DEVELOPMENT: ServiceDetailsContent = {
   slug: "mobile-app-development",
-  documentTitle: "Mobile App Development | DevelopersHub Corporation",
+  documentTitle: "Mobile App Development — iOS & Android Apps",
   metaDescription:
-    "Native and cross-platform iOS and Android apps engineered for real production loads — clean architecture, store-ready, instrumented from day one.",
+    "Mobile app development company building native and cross-platform iOS and Android apps engineered for real production loads — clean architecture, store-ready, instrumented from day one.",
   hero: {
     line1: "Mobile apps built",
     line2Prefix: "for ",
@@ -2706,9 +2706,9 @@ const MOBILE_APP_DEVELOPMENT: ServiceDetailsContent = {
 
 const CUSTOM_SOFTWARE_SOLUTIONS: ServiceDetailsContent = {
   slug: "custom-software-solutions",
-  documentTitle: "Custom Software Solutions | DevelopersHub Corporation",
+  documentTitle: "Custom Software Development Services",
   metaDescription:
-    "Internal tools, business process software, and scalable digital products tailored to the specific operational shape of your business.",
+    "Custom software development company building internal tools, business process software, and scalable digital products tailored to the specific operational shape of your business.",
   hero: {
     line1: "Custom software for",
     line2Prefix: "the shape of ",
@@ -2834,9 +2834,9 @@ const CUSTOM_SOFTWARE_SOLUTIONS: ServiceDetailsContent = {
 
 const MARKETING: ServiceDetailsContent = {
   slug: "growth-marketing",
-  documentTitle: "Growth Marketing | DevelopersHub Corporation",
+  documentTitle: "Growth Marketing Agency — Paid, Organic & Lifecycle",
   metaDescription:
-    "Paid, organic, and lifecycle growth programs engineered to acquire customers profitably and turn marketing into a measurable revenue system.",
+    "Growth marketing agency running paid advertising, SEO, and lifecycle programs engineered to acquire customers profitably and turn marketing into a measurable revenue system.",
   hero: {
     line1: "Growth marketing",
     line2Prefix: "engineered for ",
@@ -2961,7 +2961,7 @@ const MARKETING: ServiceDetailsContent = {
 
 const CREATIVE: ServiceDetailsContent = {
   slug: "creative-production",
-  documentTitle: "Creative Production | DevelopersHub Corporation",
+  documentTitle: "Creative Production Agency — Video, Visuals & AI Content",
   metaDescription:
     "Visual storytelling, video, and AI-accelerated content engineered to feed paid and organic channels with creative your audience actually stops to watch.",
   hero: {
@@ -3087,9 +3087,9 @@ const CREATIVE: ServiceDetailsContent = {
 
 const DIGITAL: ServiceDetailsContent = {
   slug: "digital-products",
-  documentTitle: "Digital Products | DevelopersHub Corporation",
+  documentTitle: "Software Development Services — Web, Mobile & Custom Software",
   metaDescription:
-    "Custom websites, e-commerce, mobile apps, and software shaped to the operational reality of your business — engineered for production, not just launch.",
+    "Software development services — custom websites, e-commerce, mobile apps, and business software shaped to your operational reality and engineered for production, not just launch.",
   hero: {
     line1: "Digital products",
     line2Prefix: "engineered for ",

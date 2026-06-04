@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("custom-software-solutions");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/digital-products/custom-software-solutions" },
 };
 
 export default function CustomSoftwareSolutionsPage() {

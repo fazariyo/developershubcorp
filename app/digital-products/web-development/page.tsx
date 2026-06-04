@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("web-development");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/digital-products/web-development" },
 };
 
 export default function WebDevelopmentPage() {

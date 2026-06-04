@@ -11,6 +11,7 @@ const content = getServiceDetailsContent("digital-products");
 export const metadata: Metadata = {
   title: content.documentTitle,
   description: content.metaDescription,
+  alternates: { canonical: "/digital-products" },
 };
 
 export default function DigitalProductsPage() {
