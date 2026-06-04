@@ -2,6 +2,7 @@
 @import "./styles/lenis.css";
 @import "./styles/footer.css";
 @import "./styles/onestop.css";
+@import "./styles/whatsapp-button.css";
 @import "./services/services-page.css";
 
 /* Match Webflow export: hide select headings until IX3 is ready */
