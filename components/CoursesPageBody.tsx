@@ -5,8 +5,7 @@ import Link from "next/link";
 import { TemplateNavbar } from "@/components/TemplateNavbar";
 import { Footer } from "@/components/Footer";
 
-const REGISTER_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSd8PSQSf03ro1_VDkqMQEGxMx5m0ziOjssoCGeH0SAlWOqotQ/viewform";
+const REGISTER_URL = "https://forms.gle/r6VJ4DSoy2s8JLHb8";
 
 const COURSE_META = [
   { label: "Duration", value: "10 weeks" },
