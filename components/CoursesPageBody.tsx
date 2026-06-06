@@ -17,7 +17,7 @@ const COURSE_META = [
 const STATS = [
   { num: "10", unit: "wk", label: "Hands-on cohort" },
   { num: "6", unit: "", label: "Structured modules" },
-  { num: "30+", unit: "", label: "Real automation projects" },
+  { num: "6+", unit: "", label: "Real automation projects" },
   { num: "100", unit: "%", label: "Internship placement" },
 ];
 
@@ -296,7 +296,7 @@ const FAQS = [
   },
   {
     q: "What does the internship look like?",
-    a: "You're embedded with a real client project team for an initial 3-month term. You'll work alongside senior specialists on shipping AI automations — same scope, same rigour, same review process. Most interns extend or transition to a full-time conversation by month four.",
+    a: "You're embedded with a project team for an initial 3-month term, working on real-world projects that make your portfolio stronger. You'll work alongside senior specialists on shipping AI automations — same scope, same rigour, same review process. Most interns extend or transition to a full-time conversation by month four.",
   },
   {
     q: "Do I need to know how to code?",
@@ -304,7 +304,7 @@ const FAQS = [
   },
   {
     q: "Is this online, in-person, or hybrid?",
-    a: "Hybrid. Two live sessions per week (one lecture, one hands-on lab) plus async assignments. All sessions are recorded for anyone in a different timezone. Optional in-person meetups at our Islamabad HQ for cohort members nearby.",
+    a: "Hybrid. Two live sessions per week (one lecture, one hands-on lab) plus async assignments. All sessions are recorded for anyone in a different timezone.",
   },
   {
     q: "What's the capstone?",
@@ -532,7 +532,7 @@ export function CoursesPageBody() {
                 <em> use </em>
                 AI — not research it. You&apos;ll learn the LLM APIs, agent
                 frameworks, and no-code tools shipping at companies today, build
-                30+ real automations, and finish with a guaranteed internship at
+                6+ real automations, and finish with a guaranteed internship at
                 our firm.
               </p>
               <div className="dh-hero-ctas">
@@ -586,9 +586,10 @@ await agent.run(trigger);`}
       {/* ───────── Stats strip ───────── */}
       <section className="dh-stats-strip dh-reveal">
         <div className="dh-inner">
-          <div className="dh-stats-row">
+          <div className="dh-stats-card">
             {STATS.map((s) => (
               <div key={s.label} className="dh-stat">
+                <span className="dh-stat-bar" aria-hidden />
                 <div className="dh-stat-num">
                   {s.num}
                   {s.unit && <span className="dh-stat-unit">{s.unit}</span>}
@@ -774,7 +775,7 @@ await agent.run(trigger);`}
               <span className="dh-path-num">01</span>
               <div>
                 <h4>10-Week Course</h4>
-                <p>Weeks 1–10 — Learn, build, ship 30+ automations.</p>
+                <p>Weeks 1–10 — Learn, build, ship 6+ automations.</p>
               </div>
             </div>
             <div className="dh-path-arrow" aria-hidden>→</div>
