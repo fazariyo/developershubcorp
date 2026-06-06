@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-const repo = "developershubcorp";
-
+// The site is served at the root of the custom domain (developershubcorp.com),
+// so no basePath/assetPrefix. The GitHub Pages workflow must NOT inject its own
+// config (configure-pages `static_site_generator: next` is removed) — otherwise
+// `trailingSlash` is dropped and /courses/ etc. 404 on the live site.
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isProd ? `/${repo}` : "",
-  assetPrefix: isProd ? `/${repo}/` : "",
   trailingSlash: true,
   images: { unoptimized: true },
 };

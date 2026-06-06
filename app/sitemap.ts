@@ -45,25 +45,28 @@ const CASE_STUDY_PROJECTS: { slug: string; priority: number }[] = [
   { slug: "wellness", priority: 0.64 },
 ];
 
+/** Site is built with `trailingSlash: true`, so canonical URLs end in "/". */
+const withSlash = (path: string) => (path.endsWith("/") ? path : `${path}/`);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((r) => ({
-    url: `${SITE_URL}${r.path}`,
+    url: `${SITE_URL}${withSlash(r.path)}`,
     lastModified: now,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
 
   const caseStudyEntries: MetadataRoute.Sitemap = CASE_STUDY_PROJECTS.map((c) => ({
-    url: `${SITE_URL}/case-study-details?project=${c.slug}`,
+    url: `${SITE_URL}/case-study-details/?project=${c.slug}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: c.priority,
   }));
 
   const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
+    url: `${SITE_URL}/blog/${post.slug}/`,
     lastModified: new Date(post.publishedISO),
     changeFrequency: "monthly",
     priority: 0.64,

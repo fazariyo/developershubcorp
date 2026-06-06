@@ -6,7 +6,10 @@ import { useEffect, useState } from "react";
 
 /** Top navigation from the Awake Webflow template (shared across pages). */
 export function TemplateNavbar() {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  // With `trailingSlash: true` usePathname() returns "/courses/" — normalize so
+  // the active-link checks below work with or without the trailing slash.
+  const pathname = rawPathname ? rawPathname.replace(/\/+$/, "") || "/" : rawPathname;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const onHome = pathname === "/";
