@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { SpecialistsPageBody } from "@/components/SpecialistsPageBody";
-import "../about-us/about-page.css";
+import { SpecialistsRedirect } from "@/components/SpecialistsRedirect";
 
+// The Specialists page was removed; this stub redirects old /specialists links
+// to the contact form. Kept out of the index so search engines drop the URL.
 export const metadata: Metadata = {
-  title: "Our Specialists — Growth, Creative, Digital & AI Experts",
-  description:
-    "Meet the specialist leaders behind DevelopersHub Corporation — Growth Marketing, Creative Production, Digital Products, and AI & Automation, all under one unified roof.",
-  alternates: { canonical: "/specialists" },
+  title: "Redirecting…",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "/contact" },
 };
 
-export default function SpecialistsPage() {
-  return <SpecialistsPageBody />;
+export default function SpecialistsRedirectPage() {
+  return <SpecialistsRedirect />;
 }
