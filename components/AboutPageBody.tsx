@@ -6,6 +6,11 @@ import { Footer } from "@/components/Footer";
 import { TeamSection } from "@/components/home/TeamSection";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
+// Temporarily hides the "Meet your specialist leaders" team profiles on the
+// About page. The section is intentionally kept — flip this to `true` to
+// bring the specialist leader profiles back.
+const SHOW_TEAM = false;
+
 const ARROW_DARK = "/assets/wf/67a5fb8bc33c7f25ab4e52d9/67a9e2599fa438b2b5ca91b6_arrow-top-right.png";
 const ARROW_LIGHT = "/assets/figma-case-study-details/icon-arrow-on-dark.svg";
 
@@ -169,14 +174,16 @@ export function AboutPageBody() {
       </section>
 
       {/* Team */}
-      <TeamSection
-        heading={
-          <>
-            Meet your{" "}
-            <span className="text-span-14">specialist leaders</span>
-          </>
-        }
-      />
+      {SHOW_TEAM && (
+        <TeamSection
+          heading={
+            <>
+              Meet your{" "}
+              <span className="text-span-14">specialist leaders</span>
+            </>
+          }
+        />
+      )}
 
       {/* Custom Quote CTA */}
       <section className="qs-about-quote">
