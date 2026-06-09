@@ -16,6 +16,10 @@ import {
   CTASection,
 } from "@/components/home";
 
+// Temporarily hides the team profiles section on the home page. The section is
+// intentionally kept — flip this to `true` to bring the team profiles back.
+const SHOW_TEAM = false;
+
 export function HomeBody() {
   return (
     <div className="main">
@@ -26,7 +30,7 @@ export function HomeBody() {
       <AboutSection />
       <ServicesSection />
       <WorkSection />
-      <TeamSection />
+      {SHOW_TEAM && <TeamSection />}
       <TestimonialsSection />
       {/*<PricingSection />*/}
       <FAQSection />
