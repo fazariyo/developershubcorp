@@ -369,9 +369,6 @@ export function PrivacyPolicyBody() {
               <br />
               30 N Gould St Ste R, Sheridan, WY 82801, USA
               <br />
-              Bahria Town Islamabad, Intellectual Village, Business District,
-              Pakistan
-              <br />
               Email:{" "}
               <a href="mailto:info@developershubcorp.com">
                 info@developershubcorp.com

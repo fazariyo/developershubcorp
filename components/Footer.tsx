@@ -4,7 +4,7 @@ const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Specialists", href: "/specialists" },
+  { label: "Specialists", href: "/contact" },
   { label: "About Us", href: "/about-us" },
   { label: "Careers", href: "/careers" },
   { label: "Courses", href: "/courses" },
@@ -172,17 +172,6 @@ export function Footer() {
                 USA Headquarters
               </span>
               <p>30 N Gould St Ste R, Sheridan, WY 82801</p>
-            </div>
-
-            <div className="dh-footer-hq">
-              <span className="dh-footer-hq-label">
-                <PinIcon />
-                Pakistan Headquarters
-              </span>
-              <p>
-                Bahria Town Islamabad, Intellectual Village, Business
-                District
-              </p>
             </div>
 
             <a

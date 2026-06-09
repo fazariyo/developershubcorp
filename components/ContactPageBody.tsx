@@ -78,13 +78,6 @@ const CHANNELS: { label: string; value: string; href: string; hint: string; icon
     hint: "By appointment only",
     icon: <PinIcon />,
   },
-  {
-    label: "Pakistan Headquarters",
-    value: "Bahria Town Islamabad, Intellectual Village, Business District",
-    href: "https://maps.google.com/?q=Bahria+Town+Islamabad+Intellectual+Village+Business+District",
-    hint: "By appointment only",
-    icon: <PinIcon />,
-  },
 ];
 
 const BUDGETS = [

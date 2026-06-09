@@ -14,6 +14,11 @@ import {
 } from "@/lib/serviceDetailsContent";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
+// Temporarily hides the "Meet the specialist" profile (photo + bio) on service
+// detail pages. The section and its data are intentionally kept — flip this to
+// `true` to bring the specialist profiles back.
+const SHOW_SPECIALIST = false;
+
 function ListIconX() {
   return (
     <svg width="14" height="14" viewBox="0 0 9 9" fill="none" aria-hidden>
@@ -275,7 +280,7 @@ export function ServiceDetailsPageBody({ slug }: ServiceDetailsPageBodyProps = {
         </div>
       </section>
 
-      {content.specialist ? (
+      {SHOW_SPECIALIST && content.specialist ? (
         <section className="qs-sd-specialist">
           <div className="qs-inner">
             <div className="qs-sd-specialist-head">
