@@ -278,6 +278,7 @@ export function DevelopersHubContentPageBody() {
     videos.forEach((v) => observer.observe(v));
 
     // First real interaction unlocks audio; re-run so the in-view clip unmutes.
+    // (Only genuine activation events count — scrolling/wheel can't grant audio.)
     const unlock = () => {
       if (audioUnlocked) return;
       audioUnlocked = true;
@@ -288,7 +289,6 @@ export function DevelopersHubContentPageBody() {
       "touchstart",
       "keydown",
       "click",
-      "wheel",
     ];
     unlockEvents.forEach((ev) =>
       window.addEventListener(ev, unlock, { passive: true }),
@@ -390,11 +390,10 @@ export function DevelopersHubContentPageBody() {
                 src="/assets/content-production/ai-realism.mp4"
                 poster="/assets/content-production/ai-realism-poster.jpg"
                 controls
-                autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
               />
             </div>
             <div className="qs-fc-client-feature-body">
@@ -471,11 +470,10 @@ export function DevelopersHubContentPageBody() {
                         src={t.src}
                         poster={t.poster}
                         controls
-                        autoPlay
                         muted
                         loop
                         playsInline
-                        preload="metadata"
+                        preload="none"
                       />
                     ) : (
                       <VideoPoster format={t.format} />
@@ -531,11 +529,10 @@ export function DevelopersHubContentPageBody() {
                       src={f.src}
                       poster={f.poster}
                       controls
-                      autoPlay
                       muted
                       loop
                       playsInline
-                      preload="metadata"
+                      preload="none"
                     />
                   </div>
                   <figcaption className="qs-fc-film-clip-body">
@@ -631,11 +628,10 @@ export function DevelopersHubContentPageBody() {
                   src="/assets/content-production/product-medula-bottle.mp4"
                   poster="/assets/content-production/product-medula-bottle-poster.jpg"
                   controls
-                  autoPlay
                   muted
                   loop
                   playsInline
-                  preload="metadata"
+                  preload="none"
                 />
               </div>
               <p className="qs-fc-reels-pitch-video-caption">
@@ -672,11 +668,10 @@ export function DevelopersHubContentPageBody() {
                     src="/assets/content-production/ad-tsukiyo.mp4"
                     poster="/assets/content-production/ad-tsukiyo-poster.jpg"
                     controls
-                    autoPlay
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
                   />
                 </div>
                 <figcaption className="qs-fc-ugc-video-caption">
@@ -694,11 +689,10 @@ export function DevelopersHubContentPageBody() {
                     src="/assets/content-production/mirae-ugc.mp4"
                     poster="/assets/content-production/mirae-ugc-poster.jpg"
                     controls
-                    autoPlay
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
                   />
                 </div>
                 <figcaption className="qs-fc-ugc-video-caption">
