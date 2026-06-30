@@ -27,7 +27,6 @@ export function TemplateNavbar() {
     pathname === "/case-studies" || pathname === "/case-study-details";
   const onContent = pathname === "/content-production";
   const onAbout = pathname === "/about-us";
-  const onSpecialists = pathname === "/contact";
   const onCareers = pathname === "/careers";
   const onCourses = pathname === "/courses";
   const onBlog = pathname === "/blog" || (pathname?.startsWith("/blog/") ?? false);
@@ -149,13 +148,6 @@ export function TemplateNavbar() {
                   aria-current={onContent ? "page" : undefined}
                 >
                   Content
-                </Link>
-                <Link
-                  href="/contact"
-                  className={`nav-link-4${onSpecialists ? " w--current" : ""}`}
-                  aria-current={onSpecialists ? "page" : undefined}
-                >
-                  Specialists
                 </Link>
                 <Link
                   href="/about-us"
@@ -287,15 +279,6 @@ export function TemplateNavbar() {
                   aria-current={onContent ? "page" : undefined}
                 >
                   Content
-                </Link>
-              </li>
-              <li className="list-item-12">
-                <Link
-                  href="/contact"
-                  className={`link-6${onSpecialists ? " w--current" : ""}`}
-                  aria-current={onSpecialists ? "page" : undefined}
-                >
-                  Specialists
                 </Link>
               </li>
               <li className="list-item-12">

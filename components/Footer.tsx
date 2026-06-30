@@ -4,7 +4,6 @@ const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Specialists", href: "/contact" },
   { label: "About Us", href: "/about-us" },
   { label: "Careers", href: "/careers" },
   { label: "Courses", href: "/courses" },

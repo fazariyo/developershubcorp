@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { TemplateNavbar } from "@/components/TemplateNavbar";
 import { Footer } from "@/components/Footer";
@@ -202,8 +203,106 @@ const FILMS: Film[] = [
 ];
 
 export function DevelopersHubContentPageBody() {
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  /* Scroll-driven playback: only the video most in view plays, and it plays
+     with sound; every other video is paused and muted. Sound follows the
+     scroll as soon as the browser allows it (browsers block unmuted autoplay
+     until the first user interaction, so it stays muted until then, then
+     unmutes the active clip and tracks scrolling from that point on). */
+  useEffect(() => {
+    const root = pageRef.current;
+    if (!root) return;
+    const videos = Array.from(root.querySelectorAll<HTMLVideoElement>("video"));
+    if (videos.length === 0) return;
+
+    videos.forEach((v) => {
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+    });
+
+    // A clip starts playing once this much of it is on screen, and pauses when
+    // it drops below; the single most-visible clip (and only it) gets sound.
+    const PLAY_AT = 0.4;
+    const SOUND_AT = 0.5;
+
+    let audioUnlocked = false;
+    const ratios = new Map<HTMLVideoElement, number>();
+
+    const apply = () => {
+      let soundVideo: HTMLVideoElement | null = null;
+      let bestRatio = 0;
+      ratios.forEach((ratio, video) => {
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          soundVideo = video;
+        }
+      });
+      if (bestRatio < SOUND_AT) soundVideo = null;
+
+      videos.forEach((video) => {
+        const ratio = ratios.get(video) ?? 0;
+        if (ratio >= PLAY_AT) {
+          const wantSound = video === soundVideo && audioUnlocked;
+          video.muted = !wantSound;
+          if (video.paused) {
+            const playing = video.play();
+            if (playing && typeof playing.catch === "function") {
+              playing.catch(() => {
+                // Unmuted playback blocked — retry muted so it still plays.
+                video.muted = true;
+                video.play().catch(() => {});
+              });
+            }
+          }
+        } else if (!video.paused) {
+          video.muted = true;
+          video.pause();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          ratios.set(
+            entry.target as HTMLVideoElement,
+            entry.isIntersecting ? entry.intersectionRatio : 0,
+          );
+        }
+        apply();
+      },
+      { threshold: [0, 0.25, 0.4, 0.5, 0.75, 0.95] },
+    );
+    videos.forEach((v) => observer.observe(v));
+
+    // First real interaction unlocks audio; re-run so the in-view clip unmutes.
+    const unlock = () => {
+      if (audioUnlocked) return;
+      audioUnlocked = true;
+      apply();
+    };
+    const unlockEvents: (keyof WindowEventMap)[] = [
+      "pointerdown",
+      "touchstart",
+      "keydown",
+      "click",
+      "wheel",
+    ];
+    unlockEvents.forEach((ev) =>
+      window.addEventListener(ev, unlock, { passive: true }),
+    );
+
+    return () => {
+      observer.disconnect();
+      unlockEvents.forEach((ev) => window.removeEventListener(ev, unlock));
+      videos.forEach((v) => v.pause());
+    };
+  }, []);
+
   return (
-    <div className="main qs-fc-page">
+    <div className="main qs-fc-page" ref={pageRef}>
       <TemplateNavbar />
 
       {/* ───────── Hero ───────── */}
@@ -226,7 +325,7 @@ export function DevelopersHubContentPageBody() {
             to one. <strong>One studio. The complete pipeline.</strong>
           </p>
           <div className="qs-fc-hero-ctas">
-            <Link href="/contact" className="qs-fc-btn-primary">
+            <Link href="/contact/#contact-form" className="qs-fc-btn-primary">
               Start a project
               <span className="qs-fc-btn-icon">
                 <ArrowRight />
@@ -322,7 +421,7 @@ export function DevelopersHubContentPageBody() {
                 ))}
               </ul>
               <div className="qs-fc-client-feature-ctas">
-                <Link href="/contact" className="qs-fc-btn-primary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-primary">
                   See what we can make for you
                   <span className="qs-fc-btn-icon">
                     <ArrowRight />
@@ -467,13 +566,13 @@ export function DevelopersHubContentPageBody() {
                 world, delivered ready to publish.
               </p>
               <div className="qs-fc-film-cta-btns">
-                <Link href="/contact" className="qs-fc-btn-primary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-primary">
                   Pitch us your short film
                   <span className="qs-fc-btn-icon">
                     <ArrowRight />
                   </span>
                 </Link>
-                <Link href="/contact" className="qs-fc-btn-secondary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-secondary">
                   Talk to the studio
                 </Link>
               </div>
@@ -514,7 +613,7 @@ export function DevelopersHubContentPageBody() {
                 ))}
               </ul>
               <div className="qs-fc-reels-pitch-ctas">
-                <Link href="/contact" className="qs-fc-btn-primary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-primary">
                   Get a product video
                   <span className="qs-fc-btn-icon">
                     <ArrowRight />
@@ -631,13 +730,13 @@ export function DevelopersHubContentPageBody() {
                 ))}
               </ul>
               <div className="qs-fc-ugc-ctas">
-                <Link href="/contact" className="qs-fc-btn-primary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-primary">
                   Request ad samples
                   <span className="qs-fc-btn-icon">
                     <ArrowRight />
                   </span>
                 </Link>
-                <Link href="/contact" className="qs-fc-btn-secondary">
+                <Link href="/contact/#contact-form" className="qs-fc-btn-secondary">
                   Talk to the studio
                 </Link>
               </div>

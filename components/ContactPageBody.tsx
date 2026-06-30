@@ -88,13 +88,23 @@ const BUDGETS = [
   "Not sure yet",
 ];
 
-const SERVICES = [
-  "Brand Strategy",
-  "Brand Identity",
-  "UX / UI Design",
-  "Web Design & Build",
-  "Content & Copy",
-  "Marketing",
+const SERVICES: { title: string; desc: string }[] = [
+  {
+    title: "Growth Marketing",
+    desc: "Customer acquisition, lead generation, and revenue scaling.",
+  },
+  {
+    title: "Creative Production",
+    desc: "Content, visual storytelling, and brand identity.",
+  },
+  {
+    title: "Digital Products",
+    desc: "Scalable software, web, and mobile development.",
+  },
+  {
+    title: "AI Automation",
+    desc: "Operational efficiency and intelligent systems.",
+  },
 ];
 
 const FAQS = [
@@ -228,7 +238,7 @@ export function ContactPageBody() {
       </section>
 
       {/* Form + aside */}
-      <section className="qs-contact-form-section">
+      <section id="contact-form" className="qs-contact-form-section">
         <div className="qs-inner">
           <div className="qs-contact-form-grid">
             <aside className="qs-contact-aside">
@@ -336,13 +346,31 @@ export function ContactPageBody() {
 
                   <div className="qs-contact-field">
                     <span className="qs-contact-field-label">
-                      What do you need?
+                      Which service can we help you with?{" "}
+                      <span className="qs-contact-field-hint">
+                        Select all that apply
+                      </span>
                     </span>
-                    <div className="qs-contact-chip-row">
+                    <div className="qs-contact-service-grid">
                       {SERVICES.map((s) => (
-                        <label key={s} className="qs-contact-chip">
-                          <input type="checkbox" name="services" value={s} />
-                          <span>{s}</span>
+                        <label key={s.title} className="qs-contact-service-card">
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value={s.title}
+                          />
+                          <span
+                            className="qs-contact-service-check"
+                            aria-hidden="true"
+                          >
+                            <CheckIcon />
+                          </span>
+                          <span className="qs-contact-service-title">
+                            {s.title}
+                          </span>
+                          <span className="qs-contact-service-desc">
+                            {s.desc}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -394,6 +422,33 @@ export function ContactPageBody() {
               )}
             </div>
           </div>
+
+          {/* Direct WhatsApp CTA */}
+          <a
+            href="https://wa.me/447429732973"
+            target="_blank"
+            rel="noreferrer"
+            className="qs-contact-wa"
+          >
+            <span className="qs-contact-wa-icon" aria-hidden="true">
+              <WhatsAppIcon />
+            </span>
+            <span className="qs-contact-wa-text">
+              <span className="qs-contact-wa-title">
+                Prefer to talk now? Connect with us directly on WhatsApp
+              </span>
+              <span className="qs-contact-wa-sub">
+                Skip the form and chat with a specialist — we typically reply
+                within an hour.
+              </span>
+            </span>
+            <span className="qs-contact-wa-btn">
+              Chat on WhatsApp
+              <span className="qs-contact-wa-arrow" aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
+            </span>
+          </a>
         </div>
       </section>
 
