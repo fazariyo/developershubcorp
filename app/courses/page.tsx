@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { CoursesPageBody } from "@/components/CoursesPageBody";
-import "./courses-page.css";
+import { CoursesIndexBody } from "@/components/CoursesIndexBody";
+import "./courses-index.css";
 
 export const metadata: Metadata = {
-  title: "AI Automation Course — Learn to Build AI Agents & Workflows",
+  title: "Courses — AI Automation, The Art of Selling & AI Content Generation",
   description:
-    "A 10-week hands-on AI automation course that takes you from zero to shipping AI agents, automated workflows, and production integrations. Every graduate joins our internship program at DevelopersHub Corporation.",
+    "Cohort-based, hands-on courses from DevelopersHub Corporation: AI Automation, The Art of Selling, and AI Content Generation. Every graduate joins our internship program.",
   alternates: { canonical: "/courses" },
 };
 
 export default function CoursesPage() {
-  return <CoursesPageBody />;
+  return <CoursesIndexBody />;
 }

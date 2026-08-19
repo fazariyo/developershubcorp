@@ -28,7 +28,8 @@ export function TemplateNavbar() {
   const onContent = pathname === "/content-production";
   const onAbout = pathname === "/about-us";
   const onCareers = pathname === "/careers";
-  const onCourses = pathname === "/courses";
+  const onCourses =
+    pathname === "/courses" || (pathname?.startsWith("/courses/") ?? false);
   const onBlog = pathname === "/blog" || (pathname?.startsWith("/blog/") ?? false);
 
   useEffect(() => {
