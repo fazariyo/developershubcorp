@@ -32,6 +32,13 @@ export type Course = {
    */
   accent: string;
 
+  /**
+   * Optional lighter partner to `accent`, used as the second stop in the
+   * page's gradients. Same family as the accent, so it reads as depth rather
+   * than as a second colour. Falls back to `accent` when omitted.
+   */
+  accentAlt?: string;
+
   eyebrow: string;
   badge: string;
   tagline: string;
@@ -104,6 +111,7 @@ const AI_AUTOMATION: Course = {
     "A 10-week hands-on AI automation course that takes you from zero to shipping AI agents, automated workflows, and production integrations. Every graduate joins our internship program at DevelopersHub Corporation.",
 
   accent: "#6366f1",
+  accentAlt: "#818cf8",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",
@@ -458,7 +466,8 @@ const ART_OF_SELLING: Course = {
   metaDescription:
     "A 6-week, 12-class course that teaches you to think, speak, and act like a natural seller — market fluency, USP positioning, pitching, objection handling, negotiation, and closing. Graduates join the internship program at DevelopersHub Corporation.",
 
-  accent: "#0f8c7f",
+  accent: "#b45309",
+  accentAlt: "#f0a020",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",
@@ -787,6 +796,7 @@ const AI_CONTENT_GENERATION: Course = {
     "An 8-week hands-on course in generative AI content: prompt-driven copywriting, image generation, AI video and voiceover, and automated content pipelines. Every graduate joins the internship program at DevelopersHub Corporation.",
 
   accent: "#8b5cf6",
+  accentAlt: "#a78bfa",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",

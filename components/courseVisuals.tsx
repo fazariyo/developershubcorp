@@ -185,7 +185,10 @@ export const AutomationFlow = () => (
   </svg>
 );
 
-/* ───────── The Art of Selling — the cycle as a rising staircase ───────── */
+/* ───────── The Art of Selling — the close ladder ─────────
+   Five stages climbing left-to-right. The rail draws itself, each stage lights
+   in turn, and the close is stamped at the top — one 8s loop, all of it CSS so
+   prefers-reduced-motion can switch it off in courses-page.css. */
 
 const SELLING_STEPS = [
   { n: "01", label: "Research the market" },
@@ -195,10 +198,10 @@ const SELLING_STEPS = [
   { n: "05", label: "Close & follow up" },
 ];
 
-const STEP_W = 252;
+const STEP_W = 250;
 const STEP_H = 50;
-const STEP_X0 = 6;
-const STEP_Y0 = 312;
+const STEP_X0 = 8;
+const STEP_Y0 = 314;
 const STEP_DX = 28;
 const STEP_DY = 66;
 
@@ -208,38 +211,66 @@ export const SellingCycle = () => {
     y: STEP_Y0 - i * STEP_DY,
   }));
 
-  // Hairline riser threading the steps together, drawn bottom-left to top-right.
+  // Staircase rail: up the side of each stage, across to the next one's foot.
   const rail = pos
-    .map((p, i) =>
-      i === 0
-        ? `M ${p.x + 20} ${p.y + STEP_H}`
-        : `L ${p.x + 20} ${p.y + STEP_H + 16} L ${p.x + 20} ${p.y + STEP_H}`,
-    )
-    .join(" ");
+    .slice(0, -1)
+    .reduce(
+      (d, p) => `${d} L ${p.x + 14} ${p.y - 16} L ${p.x + STEP_DX + 14} ${p.y - 16}`,
+      `M ${pos[0].x + 14} ${pos[0].y}`,
+    );
+
+  const last = pos.length - 1;
 
   return (
-    <svg viewBox="0 0 380 380" className="dh-flow-svg" aria-hidden role="presentation">
-      <path d={rail} className="dh-vis-link" fill="none" strokeWidth="1.2" />
+    <svg viewBox="0 0 380 380" className="dh-flow-svg dh-ladder" aria-hidden role="presentation">
+      {/* Soft accent wash behind the closing stage */}
+      <rect
+        x={pos[last].x - 10}
+        y={pos[last].y - 12}
+        width={STEP_W + 20}
+        height={STEP_H + 24}
+        rx={26}
+        className="dh-ladder-glow"
+      />
+
+      <path d={rail} className="dh-ladder-rail" fill="none" />
+      <path d={rail} className="dh-ladder-rail-fill" fill="none" pathLength={100} />
 
       {pos.map((p, i) => {
-        const last = i === SELLING_STEPS.length - 1;
+        const isLast = i === last;
         return (
-          <g key={SELLING_STEPS[i].n}>
+          <g
+            key={SELLING_STEPS[i].n}
+            className={`dh-ladder-step${isLast ? " dh-ladder-step--final" : ""}`}
+            style={{ "--i": i } as React.CSSProperties}
+          >
             <rect
               x={p.x}
               y={p.y}
               width={STEP_W}
               height={STEP_H}
-              rx={13}
-              className={`dh-vis-card${last ? " dh-vis-card--accent" : ""}`}
+              rx={14}
+              className="dh-ladder-card"
             />
-            <text x={p.x + 20} y={p.y + 31} className="dh-vis-step-num">
+            <text x={p.x + 20} y={p.y + 31} className="dh-ladder-num">
               {SELLING_STEPS[i].n}
             </text>
-            <text x={p.x + 52} y={p.y + 31} className="dh-vis-step-label">
+            <text x={p.x + 54} y={p.y + 31} className="dh-ladder-label">
               {SELLING_STEPS[i].label}
             </text>
-            {last && <circle cx={p.x + STEP_W - 22} cy={p.y + 25} r="4" className="dh-vis-dot" />}
+
+            {isLast ? (
+              <g transform={`translate(${p.x + STEP_W - 34}, ${p.y + 11})`}>
+                <circle cx="14" cy="14" r="13" className="dh-ladder-ring" />
+                {/* Idle badge, then the solid stamp that lands on the fifth beat. */}
+                <circle cx="14" cy="14" r="11" className="dh-ladder-seal-idle" />
+                <path d="M 9 14.4 L 12.6 18 L 19.4 10.6" className="dh-ladder-check-idle" />
+                <circle cx="14" cy="14" r="11" className="dh-ladder-seal" />
+                <path d="M 9 14.4 L 12.6 18 L 19.4 10.6" className="dh-ladder-check" />
+              </g>
+            ) : (
+              <circle cx={p.x + STEP_W - 22} cy={p.y + 25} r="4" className="dh-ladder-dot" />
+            )}
           </g>
         );
       })}

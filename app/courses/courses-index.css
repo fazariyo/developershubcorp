@@ -60,6 +60,10 @@
   .dh-courses-index .dh-cx-dot {
     animation: none !important;
   }
+  .dh-courses-index .dh-cx-stat {
+    opacity: 1;
+    animation: none;
+  }
 }
 
 /* ───────── Hero ───────── */
@@ -346,55 +350,107 @@
   color: #fff;
 }
 
-/* Hero stat row */
+/* ───────── Hero stat cards ─────────
+   Four separate glass cards rather than one divided strip: the accent tick
+   carries the colour, the card carries the depth, and each one keeps its own
+   padding at every width instead of relying on divider hairlines. */
 
 .dh-courses-index .dh-cx-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 64px;
-  border: 1px solid var(--cx-line);
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 30px 60px -40px rgba(27, 29, 30, 0.24);
-  overflow: hidden;
-  position: relative;
+  gap: 14px;
+  margin-top: 66px;
 }
 
 .dh-courses-index .dh-cx-stat {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 30px 28px 26px;
-  transition: background 0.3s ease;
+  padding: 24px 22px 22px;
+  border: 1px solid var(--cx-line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.72) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 48px -36px rgba(27, 29, 30, 0.42);
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  animation: dh-cx-rise 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  transition:
+    transform 0.38s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.38s ease,
+    box-shadow 0.38s ease;
 }
 
-.dh-courses-index .dh-cx-stat + .dh-cx-stat {
-  border-left: 1px solid var(--cx-line);
+.dh-courses-index .dh-cx-stat:nth-child(1) { animation-delay: 0.6s; }
+.dh-courses-index .dh-cx-stat:nth-child(2) { animation-delay: 0.68s; }
+.dh-courses-index .dh-cx-stat:nth-child(3) { animation-delay: 0.76s; }
+.dh-courses-index .dh-cx-stat:nth-child(4) { animation-delay: 0.84s; }
+
+/* Accent tick — a flex item, so the figure below it never shifts. */
+.dh-courses-index .dh-cx-stat::before {
+  content: "";
+  flex: none;
+  align-self: flex-start;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--cx-accent);
+  transition: width 0.38s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.dh-courses-index .dh-cx-stat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 130% 110% at 0% 0%,
+    color-mix(in srgb, var(--cx-accent) 13%, transparent) 0%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 0.42s ease;
 }
 
 .dh-courses-index .dh-cx-stat:hover {
-  background: rgba(27, 29, 30, 0.02);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--cx-accent) 28%, transparent);
+  box-shadow: 0 28px 52px -32px color-mix(in srgb, var(--cx-accent) 40%, transparent);
+}
+
+.dh-courses-index .dh-cx-stat:hover::before {
+  width: 42px;
+}
+
+.dh-courses-index .dh-cx-stat:hover::after {
+  opacity: 1;
 }
 
 .dh-courses-index .dh-cx-stat-num {
   font-family: var(--font-instrument-serif), "Instrument Serif", serif;
-  font-size: clamp(34px, 4vw, 46px);
-  line-height: 1;
+  font-size: clamp(36px, 4.2vw, 50px);
+  line-height: 0.98;
   letter-spacing: -0.02em;
   color: var(--cx-ink);
 }
 
 .dh-courses-index .dh-cx-stat-unit {
-  font-size: 0.5em;
-  margin-left: 2px;
+  font-size: 0.46em;
+  margin-left: 3px;
   vertical-align: super;
-  color: rgba(27, 29, 30, 0.45);
+  letter-spacing: 0;
+  color: color-mix(in srgb, var(--cx-accent) 78%, #1b1d1e);
 }
 
 .dh-courses-index .dh-cx-stat-label {
-  font-size: 12.5px;
+  margin-top: 12px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  line-height: 1.35;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--cx-muted);
 }
@@ -467,12 +523,14 @@
   box-shadow: 0 30px 60px -40px rgba(27, 29, 30, 0.28);
 }
 
+/* Inset and rounded: a full-height straight bar fought the card's corner radius. */
 .dh-courses-index .dh-cx-card-rail {
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
+  inset: 20px auto 20px 0;
+  width: 3px;
+  border-radius: 0 999px 999px 0;
   background: var(--cx-accent);
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .dh-courses-index .dh-cx-card-main {
@@ -717,7 +775,7 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.32) 0%, transparent 58%),
+    radial-gradient(circle at 15% 10%, color-mix(in srgb, var(--cx-accent) 32%, transparent) 0%, transparent 58%),
     radial-gradient(circle at 88% 88%, rgba(255, 255, 255, 0.07) 0%, transparent 55%),
     #17181a;
 }
@@ -801,15 +859,6 @@
   .dh-courses-index .dh-cx-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .dh-courses-index .dh-cx-stat + .dh-cx-stat {
-    border-left: none;
-  }
-  .dh-courses-index .dh-cx-stat:nth-child(even) {
-    border-left: 1px solid var(--cx-line);
-  }
-  .dh-courses-index .dh-cx-stat:nth-child(n + 3) {
-    border-top: 1px solid var(--cx-line);
-  }
   .dh-courses-index .dh-cx-steps {
     grid-template-columns: 1fr;
   }
@@ -847,5 +896,157 @@
   }
   .dh-courses-index .dh-cx-stats {
     margin-top: 44px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Mobile refinements
+   Appended last so these win over the earlier breakpoints.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  /* ── Hero ── */
+  .dh-courses-index .dh-cx-hero {
+    padding: 96px 0 52px;
+  }
+  .dh-courses-index .dh-cx-chips {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .dh-courses-index .dh-cx-eyebrow,
+  .dh-courses-index .dh-cx-badge {
+    font-size: 11.5px;
+    padding: 8px 14px;
+  }
+  .dh-courses-index .dh-cx-tagline {
+    font-size: 17.5px;
+    line-height: 1.5;
+  }
+  .dh-courses-index .dh-cx-lede {
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+  /* nowrap + flex-auto: the pills share a row when both fit and stack when they do not. */
+  .dh-courses-index .dh-cx-hero-ctas .dh-cx-btn,
+  .dh-courses-index .dh-cx-hero-ctas .dh-cx-btn-ghost {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 50px;
+    white-space: nowrap;
+  }
+
+  /* ── Stat cards ── */
+  .dh-courses-index .dh-cx-stats {
+    margin-top: 40px;
+    gap: 12px;
+  }
+  .dh-courses-index .dh-cx-stat {
+    padding: 20px 18px 18px;
+    border-radius: 16px;
+  }
+  .dh-courses-index .dh-cx-stat::before {
+    margin-bottom: 14px;
+  }
+  .dh-courses-index .dh-cx-stat-num {
+    font-size: clamp(34px, 9.4vw, 42px);
+  }
+  .dh-courses-index .dh-cx-stat-label {
+    margin-top: 10px;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Sections ── */
+  .dh-courses-index .dh-cx-section {
+    padding: 66px 0;
+  }
+  .dh-courses-index .dh-cx-sec-head {
+    margin-bottom: 34px;
+  }
+  .dh-courses-index .dh-cx-sec-lede {
+    font-size: 15.5px;
+  }
+  .dh-courses-index .dh-cx-list {
+    gap: 20px;
+  }
+
+  /* ── Course cards ── */
+  .dh-courses-index .dh-cx-card {
+    border-radius: 20px;
+  }
+  /* The badge earns its own row rather than being squeezed next to the kicker. */
+  .dh-courses-index .dh-cx-card-top {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .dh-courses-index .dh-cx-card-kicker,
+  .dh-courses-index .dh-cx-card-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .dh-courses-index .dh-cx-card-title {
+    font-size: clamp(24px, 6.8vw, 30px);
+  }
+  .dh-courses-index .dh-cx-card-title a {
+    display: inline-block;
+    padding-block: 2px;
+  }
+  .dh-courses-index .dh-cx-card-summary {
+    font-size: 15px;
+    line-height: 1.68;
+    margin-bottom: 18px;
+  }
+  .dh-courses-index .dh-cx-card-points li {
+    font-size: 14px;
+  }
+  .dh-courses-index .dh-cx-tag {
+    font-size: 13px;
+  }
+  .dh-courses-index .dh-cx-card-meta dt {
+    font-size: 11.5px;
+  }
+  .dh-courses-index .dh-cx-btn--card,
+  .dh-courses-index .dh-cx-btn-ghost--card {
+    min-height: 48px;
+  }
+
+  /* ── How it works ── */
+  .dh-courses-index .dh-cx-steps {
+    gap: 14px;
+  }
+  .dh-courses-index .dh-cx-step {
+    padding: 24px 22px;
+  }
+  .dh-courses-index .dh-cx-step p {
+    font-size: 14.5px;
+  }
+
+  /* ── Final CTA ── */
+  .dh-courses-index .dh-cx-cta-card .dh-cx-btn,
+  .dh-courses-index .dh-cx-cta-card .dh-cx-btn-ghost {
+    flex: 1 1 100%;
+    justify-content: center;
+    min-height: 50px;
+  }
+  .dh-courses-index .dh-cx-cta-copy {
+    font-size: 15.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dh-courses-index .dh-cx-stat {
+    padding: 18px 15px 16px;
+  }
+  .dh-courses-index .dh-cx-stat-label {
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+  }
+  .dh-courses-index .dh-cx-card-main,
+  .dh-courses-index .dh-cx-card-side {
+    padding: 22px 18px;
+  }
+  .dh-courses-index .dh-cx-card-main {
+    padding-left: 22px;
   }
 }

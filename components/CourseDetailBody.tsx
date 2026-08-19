@@ -92,7 +92,10 @@ export function CourseDetailBody({ course }: { course: Course }) {
   const Visual = COURSE_VISUALS[course.visual];
   const num = sectionNumbers(course);
 
-  const accentStyle = { "--course-accent": course.accent } as CSSProperties;
+  const accentStyle = {
+    "--course-accent": course.accent,
+    "--course-accent-alt": course.accentAlt ?? course.accent,
+  } as CSSProperties;
 
   return (
     <div className="main dh-courses-page" style={accentStyle}>
