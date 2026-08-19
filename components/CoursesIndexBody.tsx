@@ -143,8 +143,7 @@ export function CoursesIndexBody() {
                 className="dh-cx-card dh-reveal"
                 style={
                   {
-                    "--cx-violet": course.accent.violet,
-                    "--cx-pink": course.accent.pink,
+                    "--cx-accent": course.accent,
                     "--dh-reveal-delay": `${i * 90}ms`,
                   } as CSSProperties
                 }

@@ -92,13 +92,7 @@ export function CourseDetailBody({ course }: { course: Course }) {
   const Visual = COURSE_VISUALS[course.visual];
   const num = sectionNumbers(course);
 
-  const accentStyle = {
-    "--course-violet": course.accent.violet,
-    "--course-pink": course.accent.pink,
-    "--course-indigo": course.accent.indigo,
-    "--course-stroke": course.accent.stroke,
-    "--course-glow": course.accent.glow,
-  } as CSSProperties;
+  const accentStyle = { "--course-accent": course.accent } as CSSProperties;
 
   return (
     <div className="main dh-courses-page" style={accentStyle}>
@@ -164,11 +158,7 @@ export function CourseDetailBody({ course }: { course: Course }) {
             </div>
 
             {/* Right — course visual */}
-            <div
-              className={`dh-hero-visual${
-                course.heroCard.kind === "note" ? " dh-hero-visual--stack" : ""
-              }`}
-            >
+            <div className="dh-hero-visual dh-hero-visual--stack">
               <Visual />
               {course.heroCard.kind === "code" ? (
                 <div className="dh-code-card" aria-hidden>

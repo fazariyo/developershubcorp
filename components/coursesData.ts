@@ -25,15 +25,12 @@ export type Course = {
   metaTitle: string;
   metaDescription: string;
 
-  /** Accent palette applied as CSS custom properties on the page root. */
-  accent: {
-    violet: string;
-    pink: string;
-    indigo: string;
-    /** rgba tint used for SVG strokes and glows. */
-    stroke: string;
-    glow: string;
-  };
+  /**
+   * A single accent per course, applied as --course-accent on the page root.
+   * The site uses colour sparingly - dots, hairlines and low tints - so one
+   * hue per course is enough to tell them apart.
+   */
+  accent: string;
 
   eyebrow: string;
   badge: string;
@@ -106,13 +103,7 @@ const AI_AUTOMATION: Course = {
   metaDescription:
     "A 10-week hands-on AI automation course that takes you from zero to shipping AI agents, automated workflows, and production integrations. Every graduate joins our internship program at DevelopersHub Corporation.",
 
-  accent: {
-    violet: "#8b5cf6",
-    pink: "#ec4899",
-    indigo: "#6366f1",
-    stroke: "rgba(139, 92, 246, 0.35)",
-    glow: "rgba(236, 72, 153, 0.45)",
-  },
+  accent: "#6366f1",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",
@@ -467,13 +458,7 @@ const ART_OF_SELLING: Course = {
   metaDescription:
     "A 6-week, 12-class course that teaches you to think, speak, and act like a natural seller — market fluency, USP positioning, pitching, objection handling, negotiation, and closing. Graduates join the internship program at DevelopersHub Corporation.",
 
-  accent: {
-    violet: "#f59e0b",
-    pink: "#e11d48",
-    indigo: "#f97316",
-    stroke: "rgba(245, 158, 11, 0.4)",
-    glow: "rgba(225, 29, 72, 0.45)",
-  },
+  accent: "#0f8c7f",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",
@@ -801,13 +786,7 @@ const AI_CONTENT_GENERATION: Course = {
   metaDescription:
     "An 8-week hands-on course in generative AI content: prompt-driven copywriting, image generation, AI video and voiceover, and automated content pipelines. Every graduate joins the internship program at DevelopersHub Corporation.",
 
-  accent: {
-    violet: "#06b6d4",
-    pink: "#4f46e5",
-    indigo: "#0ea5e9",
-    stroke: "rgba(6, 182, 212, 0.4)",
-    glow: "rgba(79, 70, 229, 0.45)",
-  },
+  accent: "#8b5cf6",
 
   eyebrow: "Applications open",
   badge: "Internship guaranteed",

@@ -7,9 +7,12 @@
   color: #1b1d1e;
   overflow-x: clip;
   font-family: var(--inter-tight, "Inter Tight", sans-serif);
-  --cx-violet: #8b5cf6;
-  --cx-pink: #ec4899;
-  --cx-indigo: #6366f1;
+  --cx-accent: #6366f1;
+  /* Aliases so the rules below resolve to one hue instead of a three-stop
+     gradient; colour appears as dots, hairlines and tints, never as fills. */
+  --cx-violet: var(--cx-accent);
+  --cx-pink: var(--cx-accent);
+  --cx-indigo: var(--cx-accent);
   --cx-ink: #1b1d1e;
   --cx-muted: #6b7280;
   --cx-line: rgba(27, 29, 30, 0.09);
@@ -66,6 +69,11 @@
   padding: 132px 0 72px;
   overflow: hidden;
   isolation: isolate;
+  background:
+    radial-gradient(ellipse 130% 80% at 50% 0%, rgba(217, 243, 252, 0.62) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(ellipse 100% 70% at 100% 100%, rgba(253, 222, 211, 0.45) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(ellipse 100% 70% at 0% 100%, rgba(225, 217, 252, 0.38) 0%, rgba(255, 255, 255, 0) 60%),
+    #fff;
 }
 
 .dh-courses-index .dh-cx-bg {
@@ -78,8 +86,8 @@
 .dh-courses-index .dh-cx-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.2;
+  filter: blur(80px);
+  opacity: 0.5;
 }
 
 .dh-courses-index .dh-cx-orb-a {
@@ -87,7 +95,7 @@
   height: 460px;
   top: -140px;
   left: -110px;
-  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  background: radial-gradient(circle, #a5d8e8 0%, transparent 70%);
   animation: dh-cx-drift 20s ease-in-out infinite;
 }
 
@@ -96,7 +104,7 @@
   height: 400px;
   top: 40px;
   right: -120px;
-  background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+  background: radial-gradient(circle, #f6cfc0 0%, transparent 70%);
   animation: dh-cx-drift 24s ease-in-out infinite reverse;
 }
 
@@ -105,7 +113,7 @@
   height: 340px;
   bottom: -160px;
   left: 42%;
-  background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+  background: radial-gradient(circle, #cfc6f7 0%, transparent 70%);
   animation: dh-cx-drift 28s ease-in-out infinite;
 }
 
@@ -126,7 +134,9 @@
 }
 
 .dh-courses-index .dh-cx-hero-copy {
-  max-width: 780px;
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .dh-courses-index .dh-cx-hero-copy > * {
@@ -148,6 +158,7 @@
 .dh-courses-index .dh-cx-chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 22px;
 }
@@ -165,14 +176,14 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--cx-pink);
+  color: var(--cx-muted);
 }
 
 .dh-courses-index .dh-cx-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--cx-pink);
+  background: var(--cx-accent);
   animation: dh-cx-blink 2.2s ease-in-out infinite;
 }
 
@@ -187,25 +198,32 @@
   gap: 7px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--cx-line);
+  backdrop-filter: blur(8px);
+  color: var(--cx-muted);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
+.dh-courses-index .dh-cx-badge svg {
+  color: var(--cx-accent);
+}
+
 .dh-courses-index .dh-cx-title {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 0 20px;
   line-height: 0.94;
   letter-spacing: -0.03em;
 }
 
 .dh-courses-index .dh-cx-title .dh-cx-italic {
-  font-size: clamp(56px, 9vw, 104px);
-  background: linear-gradient(135deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
+  font-size: clamp(52px, 8.4vw, 96px);
+  background: linear-gradient(135deg, #1b1d1e 0%, var(--cx-accent) 52%, #1b1d1e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -226,6 +244,7 @@
   font-weight: 500;
   color: var(--cx-ink);
   max-width: 680px;
+  margin-inline: auto;
 }
 
 .dh-courses-index .dh-cx-lede {
@@ -233,12 +252,14 @@
   font-size: 16px;
   line-height: 1.75;
   color: var(--cx-muted);
-  max-width: 640px;
+  max-width: 620px;
+  margin-inline: auto;
 }
 
 .dh-courses-index .dh-cx-hero-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -252,7 +273,7 @@
   padding: 13px 24px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
+  background: var(--cx-ink);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -263,7 +284,8 @@
 
 .dh-courses-index .dh-cx-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -16px rgba(27, 29, 30, 0.45);
+  background: #2a2c2d;
+  box-shadow: 0 10px 28px rgba(27, 29, 30, 0.22);
   color: #fff;
 }
 
@@ -301,8 +323,8 @@
 }
 
 .dh-courses-index .dh-cx-btn-ghost:hover {
-  border-color: var(--cx-pink);
-  color: var(--cx-pink);
+  border-color: rgba(27, 29, 30, 0.28);
+  color: var(--cx-ink);
   transform: translateY(-2px);
 }
 
@@ -333,17 +355,9 @@
   border: 1px solid var(--cx-line);
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 30px 60px -40px rgba(27, 29, 30, 0.28);
+  box-shadow: 0 30px 60px -40px rgba(27, 29, 30, 0.24);
   overflow: hidden;
   position: relative;
-}
-
-.dh-courses-index .dh-cx-stats::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 3px;
-  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 40%, #f59e0b 70%, #06b6d4 100%);
 }
 
 .dh-courses-index .dh-cx-stat {
@@ -367,16 +381,14 @@
   font-size: clamp(34px, 4vw, 46px);
   line-height: 1;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #1b1d1e 0%, #8b5cf6 65%, #ec4899 110%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--cx-ink);
 }
 
 .dh-courses-index .dh-cx-stat-unit {
   font-size: 0.5em;
   margin-left: 2px;
   vertical-align: super;
+  color: rgba(27, 29, 30, 0.45);
 }
 
 .dh-courses-index .dh-cx-stat-label {
@@ -405,10 +417,11 @@
 
 .dh-courses-index .dh-cx-sec-num {
   display: block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--cx-pink);
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1;
+  color: rgba(27, 29, 30, 0.38);
   margin-bottom: 12px;
 }
 
@@ -450,15 +463,16 @@
 
 .dh-courses-index .dh-cx-card:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--cx-pink) 32%, transparent);
-  box-shadow: 0 32px 64px -40px color-mix(in srgb, var(--cx-pink) 60%, rgba(27, 29, 30, 0.5));
+  border-color: rgba(27, 29, 30, 0.16);
+  box-shadow: 0 30px 60px -40px rgba(27, 29, 30, 0.28);
 }
 
 .dh-courses-index .dh-cx-card-rail {
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
+  background: var(--cx-accent);
+  opacity: 0.85;
 }
 
 .dh-courses-index .dh-cx-card-main {
@@ -499,12 +513,17 @@
   margin-left: auto;
   padding: 5px 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
-  color: #fff;
+  background: #fff;
+  border: 1px solid var(--cx-line);
+  color: var(--cx-muted);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.dh-courses-index .dh-cx-card-badge svg {
+  color: var(--cx-accent);
 }
 
 .dh-courses-index .dh-cx-card-title {
@@ -518,7 +537,7 @@
 .dh-courses-index .dh-cx-card-title a {
   color: var(--cx-ink);
   text-decoration: none;
-  background-image: linear-gradient(90deg, var(--cx-violet), var(--cx-pink));
+  background-image: linear-gradient(90deg, var(--cx-accent), var(--cx-accent));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0% 2px;
@@ -563,7 +582,7 @@
   height: 20px;
   margin-top: 1px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--cx-violet) 0%, var(--cx-pink) 100%);
+  background: var(--cx-accent);
   color: #fff;
 }
 
@@ -585,8 +604,8 @@
 }
 
 .dh-courses-index .dh-cx-tag:hover {
-  border-color: color-mix(in srgb, var(--cx-pink) 45%, transparent);
-  color: var(--cx-pink);
+  border-color: color-mix(in srgb, var(--cx-accent) 40%, transparent);
+  color: var(--cx-accent);
   transform: translateY(-1px);
 }
 
@@ -597,11 +616,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 34px 34px 32px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--cx-violet) 7%, #fff) 0%,
-    color-mix(in srgb, var(--cx-pink) 7%, #fff) 100%
-  );
+  background: color-mix(in srgb, var(--cx-accent) 4%, #fbfbfc);
   border-left: 1px solid var(--cx-line);
 }
 
@@ -648,12 +663,9 @@
   border: 1px solid var(--cx-line);
   border-radius: 18px;
   background: #fff;
-  border-top: 3px solid var(--cx-pink);
+  border-top: 2px solid var(--cx-accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.dh-courses-index .dh-cx-steps > .dh-cx-step:nth-child(2) { border-top-color: var(--cx-violet); }
-.dh-courses-index .dh-cx-steps > .dh-cx-step:nth-child(3) { border-top-color: var(--cx-indigo); }
 
 .dh-courses-index .dh-cx-step:hover {
   transform: translateY(-3px);
@@ -666,7 +678,7 @@
   font-style: italic;
   font-size: 30px;
   line-height: 1;
-  color: var(--cx-pink);
+  color: rgba(27, 29, 30, 0.38);
   margin-bottom: 14px;
 }
 
@@ -705,8 +717,8 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 18% 20%, rgba(139, 92, 246, 0.55) 0%, transparent 55%),
-    radial-gradient(circle at 82% 78%, rgba(236, 72, 153, 0.5) 0%, transparent 55%),
+    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.32) 0%, transparent 58%),
+    radial-gradient(circle at 88% 88%, rgba(255, 255, 255, 0.07) 0%, transparent 55%),
     #17181a;
 }
 
@@ -737,10 +749,7 @@
 }
 
 .dh-courses-index .dh-cx-cta-card .dh-cx-italic {
-  background: linear-gradient(135deg, #c4b5fd 0%, #f9a8d4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #fff;
 }
 
 .dh-courses-index .dh-cx-cta-copy {

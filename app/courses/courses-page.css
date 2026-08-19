@@ -5,11 +5,15 @@
   color: #1b1d1e;
   overflow-x: clip;
   font-family: var(--inter-tight, "Inter Tight", sans-serif);
-  --course-pink: #ec4899;
-  --course-violet: #8b5cf6;
-  --course-indigo: #6366f1;
-  --course-stroke: rgba(139, 92, 246, 0.35);
-  --course-glow: rgba(236, 72, 153, 0.45);
+  --course-accent: #6366f1;
+  /* This page was authored against a three-hue palette. Aliasing the trio to a
+     single accent flattens every gradient into one colour, which is how the
+     rest of the site uses colour: dots and tints, never fills. */
+  --course-violet: var(--course-accent);
+  --course-pink: var(--course-accent);
+  --course-indigo: var(--course-accent);
+  --course-stroke: color-mix(in srgb, var(--course-accent) 30%, transparent);
+  --course-glow: color-mix(in srgb, var(--course-accent) 32%, transparent);
 }
 
 .dh-courses-page .dh-inner {
@@ -52,9 +56,7 @@
   }
   .dh-courses-page .dh-orb,
   .dh-courses-page .dh-bg-orb,
-  .dh-courses-page .dh-flow-lines--anim,
-  .dh-courses-page .dh-flow-pulse,
-  .dh-courses-page .dh-flow-agent-circle,
+  .dh-courses-page .dh-vis-caret,
   .dh-courses-page .dh-eyebrow-dot {
     animation: none !important;
   }
@@ -67,9 +69,9 @@
   padding: 128px 0 96px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(236, 72, 153, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 80% at 100% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 80% at 0% 100%, rgba(99, 102, 241, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 130% 80% at 50% 0%, rgba(217, 243, 252, 0.7) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(ellipse 100% 70% at 100% 100%, rgba(253, 222, 211, 0.5) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(ellipse 100% 70% at 0% 100%, rgba(225, 217, 252, 0.42) 0%, rgba(255, 255, 255, 0) 60%),
     #fff;
 }
 
@@ -91,7 +93,7 @@
 .dh-courses-page .dh-orb-a {
   width: 460px;
   height: 460px;
-  background: radial-gradient(circle, var(--course-violet) 0%, transparent 70%);
+  background: radial-gradient(circle, #a5d8e8 0%, transparent 70%);
   top: -15%;
   left: -8%;
   opacity: 0.35;
@@ -100,7 +102,7 @@
 .dh-courses-page .dh-orb-b {
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, var(--course-pink) 0%, transparent 70%);
+  background: radial-gradient(circle, #f6cfc0 0%, transparent 70%);
   top: 10%;
   right: -10%;
   opacity: 0.32;
@@ -110,7 +112,7 @@
 .dh-courses-page .dh-orb-c {
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, var(--course-indigo) 0%, transparent 70%);
+  background: radial-gradient(circle, #cfc6f7 0%, transparent 70%);
   bottom: -16%;
   left: 38%;
   opacity: 0.28;
@@ -199,12 +201,12 @@
   height: 34px;
   padding: 0 16px;
   border-radius: 999px;
-  border: 0.8px solid rgba(236, 72, 153, 0.25);
-  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(27, 29, 30, 0.1);
+  background: rgba(255, 255, 255, 0.75);
   font-size: 12.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--course-pink);
+  color: rgba(27, 29, 30, 0.62);
   backdrop-filter: blur(6px);
 }
 
@@ -215,17 +217,19 @@
   height: 34px;
   padding: 0 14px 0 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--course-violet) 0%, var(--course-pink) 100%);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(27, 29, 30, 0.1);
+  color: rgba(27, 29, 30, 0.62);
   font-size: 12.5px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 500;
-  box-shadow: 0 6px 20px -8px rgba(236, 72, 153, 0.5);
+  backdrop-filter: blur(6px);
 }
 
 .dh-courses-page .dh-intern-badge svg {
   flex-shrink: 0;
+  color: var(--course-accent);
 }
 
 .dh-courses-page .dh-intern-badge--inline {
@@ -237,14 +241,14 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--course-pink);
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.22);
+  background: var(--course-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--course-accent) 20%, transparent);
   animation: dh-courses-pulse-soft 2.4s ease-in-out infinite;
 }
 
 @keyframes dh-courses-pulse-soft {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.22); }
-  50% { box-shadow: 0 0 0 6px rgba(236, 72, 153, 0.08); }
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--course-accent) 20%, transparent); }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--course-accent) 7%, transparent); }
 }
 
 .dh-courses-page .dh-course-title {
@@ -263,7 +267,7 @@
   font-family: var(--font-instrument-serif), "Instrument Serif", serif;
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, var(--course-violet) 0%, var(--course-pink) 100%);
+  background: linear-gradient(135deg, #1b1d1e 0%, var(--course-accent) 52%, #1b1d1e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -291,10 +295,7 @@
 
 .dh-courses-page .dh-course-tagline em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--course-violet) 0%, var(--course-pink) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--course-accent);
 }
 
 .dh-courses-page .dh-course-lede {
@@ -341,7 +342,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--course-violet) 0%, var(--course-pink) 100%);
+  background: #2a2c2d;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -364,7 +365,7 @@
 
 .dh-courses-page .dh-cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -10px rgba(236, 72, 153, 0.45);
+  box-shadow: 0 10px 28px rgba(27, 29, 30, 0.22);
 }
 
 .dh-courses-page .dh-cta-primary:hover::after {
@@ -453,41 +454,84 @@
   width: 100%;
   max-width: 380px;
   height: auto;
-  filter: drop-shadow(0 24px 48px color-mix(in srgb, var(--course-violet) 18%, transparent));
 }
 
-.dh-courses-page .dh-flow-lines path {
-  opacity: 0.55;
-}
+/* Hero diagrams: paper cards, hairline connectors, one accent. The SVGs set
+   these classes rather than fill/stroke attributes so --course-accent applies. */
 
-.dh-courses-page .dh-flow-lines--anim path {
-  stroke-dasharray: 5 8;
-  animation: dh-flow-stream 4s linear infinite;
-}
-
-@keyframes dh-flow-stream {
-  to { stroke-dashoffset: -130; }
-}
-
-.dh-courses-page .dh-flow-rect {
+.dh-courses-page .dh-vis-card {
   fill: #fff;
-  stroke: var(--course-stroke);
-  stroke-width: 1.4;
+  stroke: rgba(27, 29, 30, 0.11);
+  stroke-width: 1;
 }
 
-.dh-courses-page .dh-flow-agent-circle {
-  filter: drop-shadow(0 0 14px var(--course-glow));
-  animation: dh-agent-pulse 3s ease-in-out infinite;
-  transform-origin: 205px 190px;
+.dh-courses-page .dh-vis-card--accent {
+  fill: color-mix(in srgb, var(--course-accent) 5%, #fff);
+  stroke: color-mix(in srgb, var(--course-accent) 34%, transparent);
+  stroke-width: 1.2;
 }
 
-@keyframes dh-agent-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+.dh-courses-page .dh-vis-link {
+  stroke: rgba(27, 29, 30, 0.16);
 }
 
-.dh-courses-page .dh-flow-pulse {
-  filter: drop-shadow(0 0 5px var(--course-glow));
+.dh-courses-page .dh-vis-icon {
+  stroke: var(--course-accent);
+}
+
+.dh-courses-page .dh-vis-icon--lg {
+  stroke: var(--course-accent);
+}
+
+.dh-courses-page .dh-vis-dot {
+  fill: var(--course-accent);
+}
+
+.dh-courses-page .dh-vis-bar {
+  fill: color-mix(in srgb, var(--course-accent) 26%, transparent);
+}
+
+.dh-courses-page .dh-vis-bar--faint {
+  fill: color-mix(in srgb, var(--course-accent) 14%, transparent);
+}
+
+.dh-courses-page .dh-vis-caret {
+  fill: var(--course-accent);
+  animation: dh-caret-blink 1.5s steps(1) infinite;
+}
+
+.dh-courses-page .dh-vis-label {
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  fill: rgba(27, 29, 30, 0.45);
+}
+
+.dh-courses-page .dh-vis-title {
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  fill: #1b1d1e;
+}
+
+.dh-courses-page .dh-vis-step-num {
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 16px;
+  fill: var(--course-accent);
+}
+
+.dh-courses-page .dh-vis-step-label {
+  font-family: var(--inter-tight, "Inter Tight", sans-serif);
+  font-size: 13.5px;
+  font-weight: 500;
+  fill: #1b1d1e;
+}
+
+@keyframes dh-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 /* Code card */
@@ -557,34 +601,12 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 24px 60px -32px rgba(139, 92, 246, 0.28),
-    0 4px 16px -8px rgba(27, 29, 30, 0.06);
+    0 24px 60px -34px rgba(27, 29, 30, 0.22),
+    0 4px 16px -8px rgba(27, 29, 30, 0.05);
 }
 
-/* Gradient hairline along the top of the card */
-.dh-courses-page .dh-stats-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--course-violet) 0%, var(--course-pink) 55%, var(--course-indigo) 100%);
-  opacity: 0.9;
-  z-index: 1;
-}
-
-/* Soft corner glows inside the card */
-.dh-courses-page .dh-stats-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle 220px at 0% 0%, rgba(139, 92, 246, 0.07), transparent 60%),
-    radial-gradient(circle 220px at 100% 100%, rgba(236, 72, 153, 0.07), transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* No coloured rule across the top - the card reads as paper, and the accent
+   appears only in the short bar above each figure. */
 
 .dh-courses-page .dh-stat {
   position: relative;
@@ -599,7 +621,7 @@
 }
 
 .dh-courses-page .dh-stat:hover {
-  background: rgba(236, 72, 153, 0.035);
+  background: rgba(27, 29, 30, 0.02);
 }
 
 .dh-courses-page .dh-stat-bar {
@@ -608,8 +630,7 @@
   height: 3px;
   border-radius: 999px;
   margin-bottom: 18px;
-  background: linear-gradient(90deg, var(--course-violet) 0%, var(--course-pink) 100%);
-  box-shadow: 0 1px 6px rgba(236, 72, 153, 0.35);
+  background: var(--course-accent);
   transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -623,10 +644,7 @@
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #1b1d1e 0%, var(--course-violet) 65%, var(--course-pink) 110%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #1b1d1e;
 }
 
 .dh-courses-page .dh-stat-unit {
@@ -1700,9 +1718,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle 380px at 0% 0%, rgba(139, 92, 246, 0.35), transparent 60%),
-    radial-gradient(circle 320px at 100% 100%, rgba(236, 72, 153, 0.4), transparent 60%),
-    radial-gradient(circle 240px at 100% 0%, rgba(99, 102, 241, 0.25), transparent 60%);
+    radial-gradient(circle 420px at 12% 0%, color-mix(in srgb, var(--course-accent) 30%, transparent), transparent 62%),
+    radial-gradient(circle 340px at 100% 100%, rgba(255, 255, 255, 0.07), transparent 60%);
   pointer-events: none;
 }
 
@@ -1723,8 +1740,8 @@
 }
 
 .dh-courses-page .dh-cta-card .dh-eyebrow-dot {
-  background: var(--course-pink);
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.3);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22);
 }
 
 .dh-courses-page .dh-cta-title {
@@ -1770,9 +1787,12 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  /* Copy leads on narrow screens - the diagram used to sit above the headline
+     and pushed the course name off the first screen. */
   .dh-courses-page .dh-hero-visual {
-    height: 360px;
-    order: -1;
+    height: auto;
+    order: 0;
+    margin-top: 8px;
   }
   .dh-courses-page .dh-outcomes-grid,
   .dh-courses-page .dh-audience-grid,
@@ -1892,8 +1912,13 @@
 
 /* ───────── Hero note card (non-code variant of .dh-code-card) ───────── */
 
-/* Courses whose hero card is prose stack it under the diagram instead of
-   overlapping it — a circular/fan diagram has no free corner big enough. */
+/* The hero card sits under the diagram rather than on top of it: these
+   diagrams spread across the full frame, so any overlap hides a node. */
+.dh-courses-page .dh-hero-visual--stack .dh-code-card {
+  position: static;
+  width: min(340px, 100%);
+}
+
 .dh-courses-page .dh-hero-visual--stack {
   flex-direction: column;
   justify-content: center;
@@ -1903,7 +1928,7 @@
 }
 
 .dh-courses-page .dh-hero-visual--stack .dh-flow-svg {
-  max-width: 310px;
+  max-width: 340px;
 }
 
 .dh-courses-page .dh-code-card--note {
@@ -1912,6 +1937,11 @@
   font-family: var(--inter-tight, "Inter Tight", sans-serif);
   font-size: 13px;
   padding: 16px 18px 18px;
+}
+
+.dh-courses-page .dh-hero-visual--stack .dh-code-card pre {
+  white-space: pre;
+  overflow-x: auto;
 }
 
 .dh-courses-page .dh-note-title {
@@ -1950,35 +1980,13 @@
   background: linear-gradient(135deg, var(--course-violet) 0%, var(--course-pink) 100%);
 }
 
-/* ───────── Selling-cycle ring dash animation ───────── */
-
-.dh-courses-page .dh-flow-ring {
-  stroke-dasharray: 6 10;
-  animation: dh-flow-stream 4s linear infinite;
-}
-
-/* ───────── Content-engine typing caret ───────── */
-
-.dh-courses-page .dh-cnt-caret {
-  animation: dh-caret-blink 1.4s steps(1) infinite;
-}
-
-@keyframes dh-caret-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dh-courses-page .dh-flow-ring,
-  .dh-courses-page .dh-cnt-caret {
-    animation: none !important;
-  }
-}
-
 @media (max-width: 980px) {
   .dh-courses-page .dh-hero-visual--stack {
     height: auto;
     min-height: 0;
+  }
+  .dh-courses-page .dh-hero-visual--stack .dh-flow-svg {
+    max-width: 320px;
   }
 }
 
