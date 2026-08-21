@@ -26,6 +26,12 @@ export type Course = {
   metaDescription: string;
 
   /**
+   * Course-specific registration form. Falls back to the shared
+   * REGISTER_URL when a cohort has no form of its own.
+   */
+  registerUrl?: string;
+
+  /**
    * A single accent per course, applied as --course-accent on the page root.
    * The site uses colour sparingly - dots, hairlines and low tints - so one
    * hue per course is enough to tell them apart.
@@ -465,6 +471,8 @@ const ART_OF_SELLING: Course = {
   metaTitle: "The Art of Selling — 6-Week Consultative Sales Course",
   metaDescription:
     "A 6-week, 12-class course that teaches you to think, speak, and act like a natural seller — market fluency, USP positioning, pitching, objection handling, negotiation, and closing. Graduates join the internship program at DevelopersHub Corporation.",
+
+  registerUrl: "https://forms.gle/XX32BqxzKLxL9DKK7",
 
   accent: "#b45309",
   accentAlt: "#f0a020",

@@ -213,7 +213,7 @@ export function CoursesIndexBody() {
                       <ArrowRight />
                     </Link>
                     <a
-                      href={REGISTER_URL}
+                      href={course.registerUrl ?? REGISTER_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="dh-cx-btn-ghost dh-cx-btn-ghost--card"

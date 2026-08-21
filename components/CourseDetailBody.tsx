@@ -137,7 +137,7 @@ export function CourseDetailBody({ course }: { course: Course }) {
               <p className="dh-course-lede">{course.lede}</p>
               <div className="dh-hero-ctas">
                 <a
-                  href={REGISTER_URL}
+                  href={course.registerUrl ?? REGISTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dh-cta-primary"
@@ -530,7 +530,7 @@ export function CourseDetailBody({ course }: { course: Course }) {
               <p className="dh-cta-copy">{course.cta.copy}</p>
               <div className="dh-hero-ctas">
                 <a
-                  href={REGISTER_URL}
+                  href={course.registerUrl ?? REGISTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dh-cta-primary dh-cta-primary--lg"
